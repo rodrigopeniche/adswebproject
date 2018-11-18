@@ -64,7 +64,7 @@
     <body>
         <header>
 		<div class="wrapper">
-|			<div class ="logo">The Masters Of Software </div>
+|			<div class ="logo">Publicis </div>
 
 			<nav>
 			
