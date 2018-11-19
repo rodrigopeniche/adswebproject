@@ -63,8 +63,8 @@
                                     if($_SESSION['tipo_usuario'] == "administrador"){
                                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
                                     } else if ($_SESSION['tipo_usuario'] == "cliente"){
-                                        echo '<a href="VistaAdministrador.php"> Contratar</a>';
-                                        echo '<a href="VistaAdministrador.php"> Ver Mis Contrataciones</a>';
+                                        echo '<a href="VistaContratar.php"> Contratar</a>';
+                                        echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
                                     }
 
                                     if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
