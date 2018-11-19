@@ -1,7 +1,6 @@
 <?php
     class BaseDeDatos {
         
-
         public function EjecutarQuery($sql){
             $servername = "localhost";
             $username = "root";

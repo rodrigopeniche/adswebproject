@@ -21,9 +21,9 @@ and open the template in the editor.
                 $direccion = $_POST['direccion'];
                 $titulo = $_POST['titulo'];
                 $precio = $_POST['precio'];
-                $query = "INSERT INTO carteleras VALUES ('".$id."','".$direccion."','".$titulo."','".$precio."');" ;
+                $query = "INSERT INTO carteleras VALUES (".floor($id).",'".$direccion."','".$titulo."',".floor($precio).");" ;
                 
-                if(is_int($id) && is_int($precio)){
+                if(is_numeric($id) && is_numeric($precio)){
                     $baseDatos->EjecutarQuery($query);
                 }
             }

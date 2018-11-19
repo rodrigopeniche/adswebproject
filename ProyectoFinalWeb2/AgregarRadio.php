@@ -20,10 +20,11 @@ and open the template in the editor.
                 $estacion = $_POST['estacion'];
                 $titulo = $_POST['titulo'];
                 $precio = $_POST['precio'];
-                $query = "INSERT INTO radio VALUES ('".$estacion."','".$titulo."','".$precio."');" ;
+                $query = "INSERT INTO `radio`(`estacion`, `nombre`, `precio`) VALUES ('".$estacion."','".$titulo."','".floor($precio)."');" ;
                 
-                if(is_int($precio)){
+                if(is_numeric($precio) && is_numeric($estacion)){
                     $baseDatos->EjecutarQuery($query);
+                }else{
                 }
             }
 
@@ -68,7 +69,7 @@ and open the template in the editor.
 
         <div class="row">
             <div class="column">
-                <form name="contact-form">
+                <form name="contact-form" method="post">
                     Estación: <br>
                     <input type="text" size="40" name="estacion">
                     <br><br>
