@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include("BaseDeDatos.php"); 
+?>
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -67,36 +70,22 @@
                 </tr>
                 </thead>
                 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php
+                    $baseDatos = new BaseDeDatos();
+                    $sql = "Select * from carteleras";
+                    $result = $baseDatos->ObtenerResultado($sql);
+                    while($rows = mysqli_fetch_assoc($result)){
+                ?>     
+
+                        <tr>
+                            <td><?php echo $rows['id']; ?></td>
+                            <td><?php echo $rows['direccion']; ?></td>
+                            <td><?php echo $rows['nombre']; ?></td>
+                            <td><?php echo $rows['precio']; ?></td>
+                        </tr>
+                <?php
+                    }
+                ?>
 
             </table>
            
@@ -116,42 +105,21 @@
                     <th>Precio</th>
                 </tr>
                 </thead>
-                <tr>
+                <?php
+                    $baseDatos = new BaseDeDatos();
+                    $sql = "Select * from radio";
+                    $result = $baseDatos->ObtenerResultado($sql);
+                    while($rows = mysqli_fetch_assoc($result)){
+                ?>     
 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-
-                </tr>
+                        <tr>
+                            <td><?php echo $rows['estacion']; ?></td>
+                            <td><?php echo $rows['nombre']; ?></td>
+                            <td><?php echo $rows['precio']; ?></td>
+                        </tr>
+                <?php
+                    }
+                ?>
 
             </table>       
 
@@ -170,41 +138,21 @@
                     <th>Precio</th>
                 </tr>
                 </thead>
-                <tr>
+                <?php
+                    $baseDatos = new BaseDeDatos();
+                    $sql = "Select * from television";
+                    $result = $baseDatos->ObtenerResultado($sql);
+                    while($rows = mysqli_fetch_assoc($result)){
+                ?>     
 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
+                        <tr>
+                            <td><?php echo $rows['canal']; ?></td>
+                            <td><?php echo $rows['nombre']; ?></td>
+                            <td><?php echo $rows['precio']; ?></td>
+                        </tr>
+                <?php
+                    }
+                ?>
 
             </table>       
 
