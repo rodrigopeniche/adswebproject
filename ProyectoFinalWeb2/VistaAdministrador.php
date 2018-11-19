@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("BaseDeDatos.php"); 
+
+if(isset($_POST['agregarcartelera'])){
+    echo pene;
+}
 ?>
 <html>
     <head>
@@ -9,7 +13,31 @@ include("BaseDeDatos.php");
         <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-        
+        <script>
+            function irAgregarCartelera(){
+                window.location.href = 'AgregarCartelera.php';
+            }
+            
+            function irAgregarRadio(){
+                window.location.href = 'AgregarRadio.php';
+            }
+            
+            function irAgregarTv(){
+                window.location.href = 'AgregarTv.php';
+            }
+            
+            function eliminarCartelera(){
+                window.location.href = 'EliminarCartelera.php';
+            }
+            
+            function eliminarRadio(){
+                window.location.href = 'EliminarRadio.php';
+            }
+            
+            function eliminarTv(){
+                window.location.href = 'EliminarTelevision.php';
+            }
+        </script>
         
         
     </head>
@@ -89,8 +117,8 @@ include("BaseDeDatos.php");
 
             </table>
            
-                <button> Agregar</button>
-                <button>Eliminar</button>
+            <button onclick="irAgregarCartelera()" > Agregar</button>
+            <button onclick="eliminarCartelera()">Eliminar</button>
             </div>
         
 
@@ -123,8 +151,8 @@ include("BaseDeDatos.php");
 
             </table>       
 
-                <button> Agregar</button>
-                <button>Eliminar</button>
+                <button onclick="irAgregarRadio()"> Agregar</button>
+                <button onclick="eliminarRadio()">Eliminar</button>
         </div>
 
         <div class="div3">
@@ -156,8 +184,8 @@ include("BaseDeDatos.php");
 
             </table>       
 
-             <button> Agregar</button>
-               <button>Eliminar</button>
+                <button onclick="irAgregarTv()"> Agregar</button>
+                <button onclick="eliminarTv()">Eliminar</button>
         </div>
         </div>
 
