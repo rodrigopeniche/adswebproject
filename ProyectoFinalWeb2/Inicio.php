@@ -31,6 +31,14 @@ and open the template in the editor.
 				<a href="Servicio.php"> Servicios</a>
 				<a href="Contacto.php"> Contacto</a>
                                 <?php
+                                
+                                    if($_SESSION['tipo_usuario'] == "administrador"){
+                                        echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
+                                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                                        echo '<a href="VistaAdministrador.php"> Contratar</a>';
+                                        echo '<a href="VistaAdministrador.php"> Ver Mis Contrataciones</a>';
+                                    }
+                                
                                     if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
                                         echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
                                     } else{

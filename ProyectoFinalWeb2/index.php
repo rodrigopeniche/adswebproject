@@ -14,6 +14,7 @@ and open the template in the editor.
         // put your code here
         session_start();
         $_SESSION['inicio'] = false;
+        $_SESSION['tipo_usuario'] = "nadie";
         header('Location: Inicio.php');
         ?>
     </body>

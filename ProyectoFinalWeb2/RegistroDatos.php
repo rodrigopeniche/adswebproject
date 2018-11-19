@@ -58,7 +58,21 @@
 				<a href="Nosotros.php"> Nosotros</a>
 				<a href="Servicio.php"> Servicios</a>
 				<a href="Contacto.php"> Contacto</a>
-                                <a href="IniciarSesion.php"> Iniciar Sesion</a>
+                                <?php
+                                    session_start();
+                                    if($_SESSION['tipo_usuario'] == "administrador"){
+                                        echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
+                                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                                        echo '<a href="VistaAdministrador.php"> Contratar</a>';
+                                        echo '<a href="VistaAdministrador.php"> Ver Mis Contrataciones</a>';
+                                    }
+
+                                    if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                                        echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
+                                    } else{
+                                        echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
+                                    }
+                                    ?>
 
 			</nav>
 	</div> 

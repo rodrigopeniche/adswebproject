@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['inicio'] = false;
+    $_SESSION['tipo_usuario'] = "nadie";
     header('Location: Inicio.php');
 ?>
 /* 

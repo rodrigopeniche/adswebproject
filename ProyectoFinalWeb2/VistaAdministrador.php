@@ -1,10 +1,5 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+session_start();
 ?>
 
 <html>
@@ -28,6 +23,20 @@
 				<a href="#"> Servicios</a>
 				<a href="Servicios"> Contacto</a>
 				<a href="Servicios"> Iniciar Sesion</a>
+                                <?php
+                                if($_SESSION['tipo_usuario'] == "administrador"){
+                                    echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
+                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                                    echo '<a href="VistaAdministrador.php"> Contratar</a>';
+                                    echo '<a href="VistaAdministrador.php"> Ver Mis Contrataciones</a>';
+                                }
+                                
+                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                                    echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
+                                } else{
+                                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
+                                }
+                                ?>
 
 			</nav>
 	</div> 
