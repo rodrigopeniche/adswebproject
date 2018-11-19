@@ -15,6 +15,7 @@ and open the template in the editor.
         session_start();
         $_SESSION['inicio'] = false;
         $_SESSION['tipo_usuario'] = "nadie";
+        include("class_lib.php"); 
         header('Location: Inicio.php');
         ?>
     </body>

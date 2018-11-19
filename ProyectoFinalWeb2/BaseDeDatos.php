@@ -1,6 +1,8 @@
 <?php
     class BaseDeDatos {
-        function connect(){
+        
+
+        public function EjecutarQuery($sql){
             $servername = "localhost";
             $username = "root";
             $password = "";
@@ -10,11 +12,6 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             } 
-            return $conn;
-        }
-
-        function agregarBaseDatos($sql){
-            $conn = connect();
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
             } else {
@@ -26,4 +23,4 @@
     }
     
     
-?>
+    

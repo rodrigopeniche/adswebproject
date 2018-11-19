@@ -15,15 +15,15 @@
     </head>
     <body>
         <?php
-    
+        include("BaseDeDatos.php"); 
             function agregarUsuario(){
-                //$baseDatos = new BaseDeDatos();
+                $baseDatos = new BaseDeDatos();
                 $usuario = $_POST['usuario'];
                 $correo = $_POST['email'];
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
                 $tipoUsuario = $_POST['txt_holder'];
-                $sql = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');" ;
-                echo $sql;
+                $query = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');" ;
+                $baseDatos->EjecutarQuery($query);
             }
 
             if(isset($_POST['submit'])){ 
