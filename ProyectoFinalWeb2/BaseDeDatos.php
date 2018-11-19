@@ -20,6 +20,17 @@
 
             $conn->close();
         }
+        
+        public function ObtenerResultado($sql){
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "publicis";
+            $conn = new mysqli($servername, $username, $password,$database);
+            $result = $conn->query($sql);
+            return $result;
+                    
+        }
     }
     
     

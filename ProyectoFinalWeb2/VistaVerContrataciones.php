@@ -4,6 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+session_start();
+include("BaseDeDatos.php"); 
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -49,61 +53,105 @@ and open the template in the editor.
             
 	</header>
         
-              <div class="div1">
+              
 
-                <label for="table"> Carteleras</label>
+                <label for="table"> Carteleras Contratadas</label>
                 <table>
                     <thead>
                         <tr>
-                            <th>Clave Usuario</th>
+                            <th>No. de Contrato</th>
                             <th>clave anuncio</th>
                             <th>Fecha Inicio</th>
-                            <th>Fecha Final</th>
-                            <th>No. de Contrato</th>
+                            <th>Fecha Final</th>                          
                         </tr>
                     </thead>
 
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                    </tr>
+                    <?php
+                        $baseDatos = new BaseDeDatos();
+                        $sql = "Select * from carteleracontratado";
+                        $result = $baseDatos->ObtenerResultado($sql);
+                        while($rows = mysqli_fetch_assoc($result)){
+                    ?>     
+
+                            <tr>
+                                <td><?php echo $rows['id']; ?></td>
+                                <td><?php echo $rows['clv_cartel']; ?></td>
+                                <td><?php echo $rows['fecha_inicio']; ?></td>
+                                <td><?php echo $rows['fecha_fin']; ?></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
+
+                </table>
+
+                <button>Cancelar Servicio</button>
+                
+                <label for="table"> Anuncios en Radio Contratados</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. de Contrato</th>
+                            <th>Estacion</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Final</th>                          
+                        </tr>
+                    </thead>
+
+                    <?php
+                        $baseDatos = new BaseDeDatos();
+                        $sql = "Select * from contratacionradio";
+                        $result = $baseDatos->ObtenerResultado($sql);
+                        while($rows = mysqli_fetch_assoc($result)){
+                    ?>     
+
+                            <tr>
+                                <td><?php echo $rows['id']; ?></td>
+                                <td><?php echo $rows['estacion']; ?></td>
+                                <td><?php echo $rows['fecha_inicio']; ?></td>
+                                <td><?php echo $rows['fecha_fin']; ?></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
+
+                </table>
+
+                <button>Cancelar Servicio</button>
+                
+                <label for="table"> Anuncios de Television Contratados</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. de Contrato</th>
+                            <th>Canal</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Final</th>                          
+                        </tr>
+                    </thead>
+
+                    <?php
+                        $baseDatos = new BaseDeDatos();
+                        $sql = "Select * from contrataciontv";
+                        $result = $baseDatos->ObtenerResultado($sql);
+                        while($rows = mysqli_fetch_assoc($result)){
+                    ?>     
+
+                            <tr>
+                                <td><?php echo $rows['id']; ?></td>
+                                <td><?php echo $rows['canal']; ?></td>
+                                <td><?php echo $rows['fecha_inicio']; ?></td>
+                                <td><?php echo $rows['fecha_fin']; ?></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
 
                 </table>
 
                 <button>Cancelar Servicio</button>
 
-            </div>
+            
         
     </body>
 </html>
