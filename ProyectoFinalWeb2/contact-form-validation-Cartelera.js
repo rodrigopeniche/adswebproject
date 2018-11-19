@@ -25,38 +25,42 @@ function validateForm() {
     var id = document.forms["contact-form"]["id"].value;
     if (id == "") {
         alert("El campo id es obligatorio.");
-        success = false
+        success = false;
+        return;
     }
     if (!isPositiveInteger(document.forms["contact-form"]["id"].value)){
         alert("El campo id debe ser un número entero.");
-        success = false
+        success = false;
+        return;
     }
 
     var direccion = document.forms["contact-form"]["direccion"].value;
     if (direccion == "") {
         alert("El campo direccion es obligatorio.");
-        success = false
+        success = false;
+        return;
     }
 
     var titulo = document.forms["contact-form"]["titulo"].value;
     if (titulo == "") {
         alert("El campo titulo es obligatorio.");
-        success  = false
+        success  = false;
+        return;
     }
 
     var precio = document.forms["contact-form"]["precio"].value;
     if (precio == "") {
         alert("El campo precio es obligatorio.");
-        success = false
+        success = false;
+        return;
     }
     if (!isPositiveInteger(precio)){
         alert("El campo precio debe ser un número entero.");
-        success = false
+        success = false;
+        return;
     }
 
     if (success == true){
-        alert("Registro exitoso.")
+        alert("Registro exitoso.");
     }
-    
-    return success;
 }

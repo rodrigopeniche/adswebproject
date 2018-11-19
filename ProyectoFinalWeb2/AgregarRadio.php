@@ -15,21 +15,20 @@ and open the template in the editor.
     <body>
         <?php
         include("BaseDeDatos.php"); 
-            function agregarCartelera(){
+            function agregarRadio(){
                 $baseDatos = new BaseDeDatos();
-                $id = $_POST['id'];
-                $direccion = $_POST['direccion'];
+                $estacion = $_POST['estacion'];
                 $titulo = $_POST['titulo'];
                 $precio = $_POST['precio'];
-                $query = "INSERT INTO carteleras VALUES ('".$id."','".$direccion."','".$titulo."','".$precio."');" ;
+                $query = "INSERT INTO radio VALUES ('".$estacion."','".$titulo."','".$precio."');" ;
                 
-                if(is_int($id) && is_int($precio)){
+                if(is_int($precio)){
                     $baseDatos->EjecutarQuery($query);
                 }
             }
 
             if(isset($_POST['submit'])){ 
-                agregarCartelera();
+                agregarRadio();
             }  
             
         ?>
@@ -70,10 +69,6 @@ and open the template in the editor.
         <div class="row">
             <div class="column">
                 <form name="contact-form">
-                    ID: <br>
-                    <input type="text" size="40" name="id">
-                    <br><br>
-                        
                     Estación: <br>
                     <input type="text" size="40" name="estacion">
                     <br><br>
@@ -86,7 +81,7 @@ and open the template in the editor.
                     <input type="text" size="40" name="precio">
                     <br><br>
                         
-                    <button type="button" onclick="validateForm()">Enviar!</button>                       
+                    <input type="submit" name="submit" value="Registrar Datos" onclick="validateForm()">                       
                 </form>
             </div>
         </div>
