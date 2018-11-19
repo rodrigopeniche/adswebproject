@@ -76,14 +76,12 @@
 
 			</nav>
 	</div> 
-	</header>
+	</header> 
      <form action="" method="POST">
        
        
         <h2>Por favor ingrese sus datos de registro</h2>
         </select>
-            <label for="">Nombre de Usuario:</label>
-            <input type="text" name="usuario" required="">
             <label for="">Correo:</label>
             <input type="email" name="usuario" required=""> 
             <label for="">Contraseña: </label>
