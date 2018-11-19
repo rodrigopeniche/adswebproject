@@ -22,7 +22,7 @@ session_start();
 			<nav>
                             <ul>
                                 
-<li><a href="#"> Inicio</a</li>
+                                <li><a href="#"> Inicio</a</li>
 				<li><a href="#"> Nosotros</a></li>
 				<li><a href="#"> Servicios</a></li>
 				<li><a href="Servicios"> Contacto</a></li>
