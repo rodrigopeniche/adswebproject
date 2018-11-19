@@ -82,10 +82,17 @@
        
         <h2>Por favor ingrese sus datos de registro</h2>
         </select>
-            <label for="">nombre de usuario</label>
-            <input type="text" name="usuario" required=""> 
-            <label for="">contraseña </label>
+            <label for="">Nombre de Usuario:</label>
+            <input type="text" name="usuario" required="">
+            <label for="">Correo:</label>
+            <input type="email" name="usuario" required=""> 
+            <label for="">Contraseña: </label>
             <input type="password" name="contrasena" required="">
+            <label for="">Tipo de Usuario: </label>
+            <select>
+              <option value="cliente">Cliente</option>
+              <option value="admin">Admin</option>
+            </select>
             <input type="submit" name="submit" value="Registrar Datos">
             
     </form>
