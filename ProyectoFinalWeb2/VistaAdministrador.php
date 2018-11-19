@@ -41,7 +41,7 @@
             <table>
   <tr>
     <th>id</th>
-    <th>Estacion</th>
+    <th>Direccion</th>
     <th>Titulo</th>
     <th>Precio</th>
   </tr>
@@ -88,41 +88,91 @@
            <label for="table">Radio</label>
          <table>
   <tr>
-    <th>id</th>
+   
     <th>Estacion</th>
     <th>Titulo</th>
     <th>Precio</th>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  <tr>
-    <td></td>
+    
     <td></td>
     <td></td>
     <td></td>
 
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  <tr>
-    <td</td>
+    
     <td></td>
     <td></td>
     <td></td>
 
   </tr>
   <tr>
+    
     <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+   
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+   
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  
+</table>       
+                
+                
+       </div>
+        
+        <div id="div3">
+           <label for="table">Television</label>
+         <table>
+  <tr>
+    
+    <th>Canal</th>
+    <th>Titulo</th>
+    <th>Precio</th>
+  </tr>
+  <tr>
+    
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+    
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+    
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+    
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+    
     <td></td>
     <td></td>
     <td></td>
