@@ -7,13 +7,15 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
-        <title></title>
+        <title>Contratar Publicidad</title>
     </head>
     <body>
         <header>
 		<div class="wrapper">
-|			<div class ="logo">Publicis </div>
+|			 <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
+
 
 			<nav>
 			
@@ -43,5 +45,167 @@ and open the template in the editor.
 
 
 	</header>
+        <div class="contenedor-principal">
+
+            <h2> Bienvenido Usuario: </h2>
+            <h3>Aquí puedes ver los servicios disponibles y Contratar alguno</h3>
+        <div class="div1">
+            
+            <label for="table"> Carteleras</label>
+            <table>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Direccion</th>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+           
+                <button>Contratar</button>
+                
+            </div>
+        
+
+        <div class="div2">
+            <label for="table">Radio</label>
+            <table>
+                <thead>
+                <tr>
+
+                    <th>Estacion</th>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+
+                </tr>
+
+            </table>       
+
+                <button> Contratar</button>
+                
+        </div>
+
+        <div class="div3">
+            <label for="table">Television</label>
+            <table>
+                <thead>
+                <tr>
+
+                    <th>Canal</th>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+            </table>       
+
+             <button> contratar</button>
+               
+        </div>
+        </div>
     </body>
 </html>
