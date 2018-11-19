@@ -13,6 +13,26 @@ and open the template in the editor.
         <script src="contact-form-validation-Cartelera.js"></script>
     </head>
     <body>
+        <?php
+        include("BaseDeDatos.php"); 
+            function agregarCartelera(){
+                $baseDatos = new BaseDeDatos();
+                $id = $_POST['id'];
+                $direccion = $_POST['direccion'];
+                $titulo = $_POST['titulo'];
+                $precio = $_POST['precio'];
+                $query = "INSERT INTO carteleras VALUES ('".$id."','".$direccion."','".$titulo."','".$precio."');" ;
+                
+                if(is_int($id) && is_int($precio)){
+                    $baseDatos->EjecutarQuery($query);
+                }
+            }
+
+            if(isset($_POST['submit'])){ 
+                agregarCartelera();
+            }  
+            
+        ?>
         <header>
         <div class="wrapper">
 |           <div class ="logo">The Masters Of Software </div>
@@ -49,7 +69,7 @@ and open the template in the editor.
 
         <div class="row">
             <div class="column">
-                <form name="contact-form">
+                <form name="contact-form" method="POST" action="">
                     ID: <br>
                     <input type="text" size="40" name="id">
                     <br><br>
@@ -65,8 +85,8 @@ and open the template in the editor.
                     Precio: <br>
                     <input type="text" size="40" name="precio">
                     <br><br>
-                        
-                    <button type="button" onclick="validateForm()">Enviar!</button>                       
+                     
+                    <input type="submit" name="submit" value="Registrar Datos" onclick="validateForm()">               
                 </form>
             </div>
         </div>

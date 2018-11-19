@@ -13,6 +13,26 @@ and open the template in the editor.
         <script src="contact-form-validation-Radio.js"></script>
     </head>
     <body>
+        <?php
+        include("BaseDeDatos.php"); 
+            function agregarCartelera(){
+                $baseDatos = new BaseDeDatos();
+                $id = $_POST['id'];
+                $direccion = $_POST['direccion'];
+                $titulo = $_POST['titulo'];
+                $precio = $_POST['precio'];
+                $query = "INSERT INTO carteleras VALUES ('".$id."','".$direccion."','".$titulo."','".$precio."');" ;
+                
+                if(is_int($id) && is_int($precio)){
+                    $baseDatos->EjecutarQuery($query);
+                }
+            }
+
+            if(isset($_POST['submit'])){ 
+                agregarCartelera();
+            }  
+            
+        ?>
         <header>
         <div class="wrapper">
 |           <div class ="logo">The Masters Of Software </div>
