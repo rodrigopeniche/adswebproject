@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
         <title></title>
     </head>
     <body>
