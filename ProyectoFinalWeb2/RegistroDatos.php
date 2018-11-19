@@ -6,45 +6,29 @@
         <title>Formulario1</title>
         <link rel="stylesheet" href="estilos.css">
         <link rel="stylesheet" href="estiloForm.css"/>
+        <script>
+            function getText(element) {
+            var textHolder = element.options[element.selectedIndex].text
+            document.getElementById("txt_holder").value = textHolder;
+            }
+        </script>
     </head>
     <body>
         <?php
-            
-            function crearbitacora(){
-                
+    
+            function agregarUsuario(){
+                //$baseDatos = new BaseDeDatos();
+                $usuario = $_POST['usuario'];
+                $correo = $_POST['email'];
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
-                $texto = $_POST['usuario'] .",". $contrasena.PHP_EOL;
-                file_put_contents("bitacora.txt", $texto, FILE_APPEND);
-                //header("location:index.php");
+                $tipoUsuario = $_POST['txt_holder'];
+                $sql = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');" ;
+                echo $sql;
             }
-            
-            function checar_disponibilidad($usuario){
-                $comprobacion = false;
-                $myfile = fopen("bitacora.txt", "r") or die("Unable to open file!");
-                
-                while(!feof($myfile)) {
-                  $usuario_existente = fgets($myfile);
-                  $arreglo = explode(",", $usuario_existente,2);
-                  $usuario_existente = $arreglo[0];
-                  if($usuario == $usuario_existente){
-                      $comprobacion = true;
-                  }                  
-                }
-                
-                if($comprobacion){
-                      // El nombre de usuario ya existe
-                    echo "EL NOMBRE DE USUARIO YA EXITSE!!";
-                } else {
-                    crearbitacora();
-                    echo "MUCHAS GRACIAS POR REGISTRARSE!";
-                } 
-                fclose($myfile);
-            }
-
 
             if(isset($_POST['submit'])){ 
-                checar_disponibilidad($_POST['usuario']);
-                //crearbitacora("alta");
+
+                agregarUsuario();
             }  
             
         ?>
@@ -82,15 +66,19 @@
        
         <h2>Por favor ingrese sus datos de registro</h2>
         </select>
+            <label for="">nombre Usuario:</label>
+            <input type="text" name="usuario" required=""> 
             <label for="">Correo:</label>
-            <input type="email" name="usuario" required=""> 
+            <input type="email" name="email" required=""> 
             <label for="">Contraseña: </label>
             <input type="password" name="contrasena" required="">
             <label for="">Tipo de Usuario: </label>
-            <select>
-              <option value="cliente">Cliente</option>
-              <option value="admin">Admin</option>
+            <select name="text selection" onchange="getText(this)">
+                <option value="">Elige una Opcion</option>
+                <option value="cliente">cliente</option>
+                <option value="admin">admin</option>
             </select>
+            <input type="hidden" name="txt_holder" id="txt_holder">
             <input type="submit" name="submit" value="Registrar Datos">
             
     </form>
