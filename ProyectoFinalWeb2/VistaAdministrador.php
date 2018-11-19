@@ -1,11 +1,9 @@
-<?php
-session_start();
-?>
 
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         
@@ -19,14 +17,14 @@ session_start();
 		<div class="wrapper">
                     <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
 
-			<nav>
+			<nav class="shift">
                             <ul>
                                 
-                                <li><a href="#"> Inicio</a</li>
+                                <li><a href="#"> Inicio</a></li>
 				<li><a href="#"> Nosotros</a></li>
 				<li><a href="#"> Servicios</a></li>
-				<li><a href="Servicios"> Contacto</a></li>
-				<li><a href="Servicios"> Iniciar Sesion</a></li>
+				<li><a href="Servicio"> Contacto</a></li>
+				<li><a href="Servicio.php"> Iniciar Sesion</a></li>
                             
 
                             

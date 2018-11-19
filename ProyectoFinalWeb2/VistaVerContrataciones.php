@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -7,15 +7,17 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <title></title>
     </head>
     <body>
         <header>
 		<div class="wrapper">
-|			
+			
                         <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
-			<nav>
+			<nav class="shift">
                             <ul>
                                 <li><a href="Inicio.php"> Inicio</a></li>
 				<li><a href="Nosotros.php"> Nosotros</a></li>
