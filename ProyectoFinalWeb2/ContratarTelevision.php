@@ -99,6 +99,7 @@ and open the template in the editor.
   <br><br>
   Canal:
   <select name="Anuncios" onchange="getText(this)">
+      <option>Selecciones una opcion</option>
       <?php
             $baseDatos = new BaseDeDatos();
             $sql = "Select canal from television";

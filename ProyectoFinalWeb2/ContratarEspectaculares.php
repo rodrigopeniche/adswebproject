@@ -101,6 +101,7 @@ and open the template in the editor.
   <br><br>
   Anuncios:
   <select name="Anuncios" onchange="getText(this)">
+      <option>Selecciones una opcion</option>
         <?php
             $baseDatos = new BaseDeDatos();
             $sql = "Select id from carteleras";

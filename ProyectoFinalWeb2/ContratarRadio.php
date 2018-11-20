@@ -99,12 +99,14 @@ and open the template in the editor.
   <br><br>
   Estaciones:
   <select name="Anuncios" onchange="getText(this)">
+      <option>Selecciones una opcion</option>
       <?php
             $baseDatos = new BaseDeDatos();
             $sql = "Select estacion from radio";
             $result = $baseDatos->ObtenerResultado($sql);
             while($rows = mysqli_fetch_assoc($result)){
         ?>
+      
       <option><?php echo $rows['estacion']; ?></option>
         <?php
             }
