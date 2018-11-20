@@ -28,6 +28,7 @@
             $database = "publicis";
             $conn = new mysqli($servername, $username, $password,$database);
             $result = $conn->query($sql);
+            $conn->close();
             return $result;
                     
         }
