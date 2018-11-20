@@ -24,6 +24,7 @@ and open the template in the editor.
     <?php
         session_start();
         include("BaseDeDatos.php"); 
+            function agregarCartelera(){
                 $baseDatos = new BaseDeDatos();
                 $cartel = $_POST['txt_holder'];
                 $usuario = $_SESSION['usuario'];
@@ -42,12 +43,12 @@ and open the template in the editor.
                 echo $query;
                 if(is_numeric($diaInicio) && is_numeric($diaTermino)){
                     $baseDatos->EjecutarQuery($query);
+                }
             }
-
             if(isset($_POST['submit'])){ 
                 agregarCartelera();
             }  
-            
+        
         ?>
 <header>
 		<div class="wrapper">
