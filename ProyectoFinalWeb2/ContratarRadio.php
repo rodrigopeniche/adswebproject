@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="styleDaniel.css">
         <link rel="stylesheet" href="estilos.css">
         <script src="contact-form-validation.js"></script>
-         <script>
+        <script>
             function getText(element) {
             var textHolder = element.options[element.selectedIndex].text
             document.getElementById("txt_holder").value = textHolder;
