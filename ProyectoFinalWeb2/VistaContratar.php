@@ -15,7 +15,21 @@ include("BaseDeDatos.php");
         <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-        
+        <script>
+            function contratarCartelera(){
+                window.location.href = 'ContratarEspectaculares.php';
+            }
+            
+            function contratarRadio(){
+                window.location.href = 'ContratarRadio.php';
+            }
+            
+            function contratarTv(){
+                window.location.href = 'ContratarTelevision.php';
+            }
+            
+            
+        </script>
         
         
     </head>
@@ -93,7 +107,7 @@ include("BaseDeDatos.php");
                     ?>
                 </table>
 
-                <button>Contratar</button>
+                <button onclick="contratarCartelera()">Contratar</button>
 
             </div>
 
@@ -127,7 +141,7 @@ include("BaseDeDatos.php");
 
                 </table>       
 
-                <button> Contratar</button>
+                <button onclick="contratarRadio()()"> Contratar</button>
 
             </div>
 
@@ -160,7 +174,7 @@ include("BaseDeDatos.php");
 
                 </table>       
 
-                <button> contratar</button>
+                <button onclick="contratarTv()"> contratar</button>
 
             </div>
         </div>
