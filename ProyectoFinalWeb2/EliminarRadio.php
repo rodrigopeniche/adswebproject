@@ -12,8 +12,7 @@
             function eliminar(){
                 $baseDatos = new BaseDeDatos();
                 $clave = $_POST['clave'];
-                $query = "DELETE FROM radio WHERE estacion =".$clave.";" ;
-                echo $query;
+                $query = "DELETE FROM `radio` WHERE CONCAT(`radio`.`estacion`) = '".$clave."';";
                 $baseDatos->EjecutarQuery($query);
             }
 
