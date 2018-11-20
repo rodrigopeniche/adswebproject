@@ -17,17 +17,19 @@ function myFunction() {
     precio = document.getElementById("precio").value;
 }
 
+function isPositiveInteger(s) {
+  return /^\+?[1-9][\d]*$/.test(s);
+}
+
 function validateForm() {
     var success = true
-    var id = document.forms["contact-form"]["id"].value;
-    if (id == "") {
-        alert("El campo id es obligatorio");
-        success = false
-    }
-
     var canal = document.forms["contact-form"]["canal"].value;
     if (canal == "") {
         alert("El campo canal es obligatorio");
+        success = false;
+    }
+    if (!isPositiveInteger(canal)){
+        alert("El campo canal es inválido");
         success = false;
     }
 
@@ -41,6 +43,10 @@ function validateForm() {
     if (precio == "") {
         alert("El campo precio es obligatorio");
         success = false
+    }
+    if (!isPositiveInteger(precio)){
+        alert("El campo precio es inválido");
+        success = false;
     }
 
     if (success == true){

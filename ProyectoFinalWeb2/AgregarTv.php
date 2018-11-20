@@ -13,6 +13,28 @@ and open the template in the editor.
         <script src="contact-form-validation-Tv.js"></script>
     </head>
     <body>
+         <?php
+        include("BaseDeDatos.php"); 
+            function agregarTv(){
+                $baseDatos = new BaseDeDatos();
+                $canal = $_POST['canal'];
+                $titulo = $_POST['titulo'];
+                $precio = $_POST['precio'];
+                $query = "INSERT INTO `television` VALUES ('".floor($canal)."','".$titulo."','".floor($precio)."');" ;
+                
+                if(is_numeric($precio) && is_numeric($canal)){
+                    echo "Acceso permitido";
+                    $baseDatos->EjecutarQuery($query);
+                }else{
+                    echo "Acceso denegado";
+                }
+            }
+
+            if(isset($_POST['submit'])){ 
+                agregarTv();
+            }  
+            
+        ?>
         <header>
         <div class="wrapper">
 |           <div class ="logo">The Masters Of Software </div>
@@ -49,11 +71,7 @@ and open the template in the editor.
 
         <div class="row">
             <div class="column">
-                <form name="contact-form">
-                    ID: <br>
-                    <input type="text" size="40" name="id">
-                    <br><br>
-                        
+                <form name="contact-form" method="post">
                     Canal: <br>
                     <input type="text" size="40" name="canal">
                     <br><br>
@@ -66,7 +84,7 @@ and open the template in the editor.
                     <input type="text" size="40" name="precio">
                     <br><br>
                         
-                    <button type="button" onclick="validateForm()">Enviar!</button>                       
+                    <input type="submit" name="submit" value="Registrar Datos" onclick="validateForm()">                       
                 </form>
             </div>
         </div>
