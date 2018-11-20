@@ -12,7 +12,7 @@
             }
             
             function checar_disponibilidad($usuario){
-                $comprobacion = false;
+                /*$comprobacion = false;
                 $myfile = fopen("bitacora.txt", "r") or die("Unable to open file!");
                 $contrasena_hash;
                 
@@ -32,7 +32,20 @@
                 if(!$comprobacion){
                     echo "NO EXISTE EL USUARIO";
                 }
-                fclose($myfile);
+                fclose($myfile);*/
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $database = "publicis";
+                $sql = "SELECT * FROM usuario where id_usuario =".$usuario.";";
+                $conn = new mysqli($servername, $username, $password,$database);
+                $result = $conn->query($sql);
+                $row = mysqli_fetch_assoc($result);
+                echo $row['id_usuario'];
+                echo $row['correo'];
+                echo $row['tipo'];
+                $conn->close();
+                return $result;
             }
             
             function checar_contrasena($contrasena_hash){
