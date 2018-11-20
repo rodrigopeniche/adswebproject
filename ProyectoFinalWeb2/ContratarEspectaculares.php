@@ -13,8 +13,43 @@ and open the template in the editor.
         <link rel="stylesheet" href="styleDaniel.css">
         <link rel="stylesheet" href="estilos.css">
         <script src="contact-form-validation.js"></script>
+        <script>
+            function getText(element) {
+            var textHolder = element.options[element.selectedIndex].text
+            document.getElementById("txt_holder").value = textHolder;
+            }
+        </script>
     </head>
 <body>
+    <?php
+        session_start();
+        include("BaseDeDatos.php"); 
+            function agregarCartelera(){
+                $baseDatos = new BaseDeDatos();
+                $cartel = $_POST['txt_holder'];
+                $usuario = $_SESSION['usuario'];
+                $diaInicio = $_POST['diaInicio'];
+                $mesInicio = $_POST['mesInicio'];
+                $anoInicio = $_POST['anoInicio'];
+                $fechaInicio = $mesInicio."/".$diaInicio."/".$anoInicio;
+                        
+                $diaTermino = $_POST['diaTermino'];
+                $mesTermino = $_POST['mesTermino'];
+                $anoTermino = $_POST['anoTermino'];
+                $fechaTermino= $mesTermino."/".$diaTermino."/".$anoTermino;
+                
+                $query = "INSERT INTO `carteleracontratado`(`clv_cartel`, `clv_usuario`, `fecha_inicio`, `fecha_fin`) VALUES "
+                        . "('".$cartel."','".$usuario."',STR_TO_DATE('".$fechaInicio."', '%m/%d/%Y'),STR_TO_DATE('".$fechaTermino."', '%m/%d/%Y'))" ;
+                echo $query;
+                if(is_numeric($diaInicio) && is_numeric($diaTermino)){
+                    $baseDatos->EjecutarQuery($query);
+                }
+            }
+            if(isset($_POST['submit'])){ 
+                agregarCartelera();
+            }  
+        
+        ?>
 <header>
 		<div class="wrapper">
 |			<div class ="logo">Publicis </div>
@@ -24,8 +59,7 @@ and open the template in the editor.
 				<a href="Servicio.php"> Servicios</a>
 				<a href="Contacto.php"> Contacto</a>
                                 <?php
-                                    session_start();
-                                    include("BaseDeDatos.php");
+                                    
                                     if($_SESSION['tipo_usuario'] == "administrador"){
                                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
                                     } else if ($_SESSION['tipo_usuario'] == "cliente"){
@@ -46,7 +80,7 @@ and open the template in the editor.
 
 <h2>Contratar Espectaculares</h2>
 
-<form action="/action_page.php">
+<form action="" method="post">
   Día de inicio:<br>
   <input type="text" name="diaInicio" value="">
   <br>
@@ -66,7 +100,7 @@ and open the template in the editor.
   <input type="text" name="anoTermino" value="">
   <br><br>
   Anuncios:
-  <select name="Anuncios">
+  <select name="Anuncios" onchange="getText(this)">
         <?php
             $baseDatos = new BaseDeDatos();
             $sql = "Select id from carteleras";
@@ -78,9 +112,10 @@ and open the template in the editor.
             }
         ?>
   </select>
+  <input type="hidden" name="txt_holder" id="txt_holder">
   <br><br>
 
-  <input type="submit" value="Aceptar">
+  <input type="submit" value="Aceptar" name="submit">
 </form> 
 
 

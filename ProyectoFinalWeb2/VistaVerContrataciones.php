@@ -15,6 +15,21 @@ include("BaseDeDatos.php");
         <link href="CssTablas.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <title></title>
+        <script>
+            function cancelarCartelera(){
+                window.location.href = 'CancelarContratacionCartelera.php';
+            }
+            
+            function cancelarRadio(){
+                window.location.href = 'CancelarContratacionRadio.php';
+            }
+            
+            function cancelarTv(){
+                window.location.href = 'CancelarContratacionTv.php';
+            }
+            
+            
+        </script>
     </head>
     <body>
         <header>
@@ -68,7 +83,7 @@ include("BaseDeDatos.php");
 
                     <?php
                         $baseDatos = new BaseDeDatos();
-                        $sql = "Select * from carteleracontratado";
+                        $sql = "Select * from carteleracontratado where clv_usuario =".$usuario.";";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
@@ -85,7 +100,7 @@ include("BaseDeDatos.php");
 
                 </table>
 
-                <button>Cancelar Servicio</button>
+                <button onclick="cancelarCartelera()">Cancelar Servicio</button>
                 
                 <label for="table"> Anuncios en Radio Contratados</label>
                 <table>
@@ -100,7 +115,7 @@ include("BaseDeDatos.php");
 
                     <?php
                         $baseDatos = new BaseDeDatos();
-                        $sql = "Select * from contratacionradio";
+                        $sql = "Select * from contratacionradio where clv_usuario =".$usuario.";";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
@@ -117,7 +132,7 @@ include("BaseDeDatos.php");
 
                 </table>
 
-                <button>Cancelar Servicio</button>
+                <button onclick="cancelarRadio()">Cancelar Servicio</button>
                 
                 <label for="table"> Anuncios de Television Contratados</label>
                 <table>
@@ -132,7 +147,8 @@ include("BaseDeDatos.php");
 
                     <?php
                         $baseDatos = new BaseDeDatos();
-                        $sql = "Select * from contrataciontv";
+                        $usuario = $_SESSION['usuario'];
+                        $sql = "Select * from contrataciontv where clv_usuario =".$usuario.";";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
@@ -149,7 +165,7 @@ include("BaseDeDatos.php");
 
                 </table>
 
-                <button>Cancelar Servicio</button>
+                <button onclick="cancelarTv()">Cancelar Servicio</button>
 
             
         
