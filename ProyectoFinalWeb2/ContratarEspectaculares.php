@@ -25,6 +25,7 @@ and open the template in the editor.
 				<a href="Contacto.php"> Contacto</a>
                                 <?php
                                     session_start();
+                                    include("BaseDeDatos.php");
                                     if($_SESSION['tipo_usuario'] == "administrador"){
                                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
                                     } else if ($_SESSION['tipo_usuario'] == "cliente"){
@@ -53,7 +54,7 @@ and open the template in the editor.
   <input type="text" name="mesInicio" value="">
   <br>
   Año de inicio:<br>
-  <input type="text" name="añoInicio" value="">
+  <input type="text" name="anoInicio" value="">
   <br>
   Dia de termino:<br>
   <input type="text" name="diaTermino" value="">
@@ -62,11 +63,20 @@ and open the template in the editor.
   <input type="text" name="mesTermino" value="">
   <br>
   Año de termino:<br>
-  <input type="text" name="añoTermino" value="">
+  <input type="text" name="anoTermino" value="">
   <br><br>
   Anuncios:
   <select name="Anuncios">
-
+        <?php
+            $baseDatos = new BaseDeDatos();
+            $sql = "Select id from carteleras";
+            $result = $baseDatos->ObtenerResultado($sql);
+            while($rows = mysqli_fetch_assoc($result)){
+        ?>
+      <option><?php echo $rows['id']; ?></option>
+        <?php
+            }
+        ?>
   </select>
   <br><br>
 

@@ -24,6 +24,7 @@ and open the template in the editor.
 				<a href="Contacto.php"> Contacto</a> 
                                 <?php
                                     session_start();
+                                    include("BaseDeDatos.php");
                                     if($_SESSION['tipo_usuario'] == "administrador"){
                                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
                                     } else if ($_SESSION['tipo_usuario'] == "cliente"){
@@ -65,7 +66,16 @@ and open the template in the editor.
   <br><br>
   Canal:
   <select name="Anuncios">
-
+      <?php
+            $baseDatos = new BaseDeDatos();
+            $sql = "Select canal from television";
+            $result = $baseDatos->ObtenerResultado($sql);
+            while($rows = mysqli_fetch_assoc($result)){
+        ?>
+      <option><?php echo $rows['canal']; ?></option>
+        <?php
+            }
+        ?>
   </select>
   <br><br>
 
