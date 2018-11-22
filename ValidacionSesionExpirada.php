@@ -5,4 +5,7 @@
             session_destroy();  
         }
         $_SESSION['LAST_ACTIVITY'] = time(); 
+    
+        echo "Tu sesion ha expirado";
+        header('Location: IniciarSesion.php');
 ?>
