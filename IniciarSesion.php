@@ -61,6 +61,7 @@
 
                 if($contrasena == $db_contrasena_hash){
                     echo "INICIASTE SESION";
+                    $_SESSION['LAST_ACTIVITY'] = time();
                     $_SESSION['inicio'] = true;
                     $_SESSION['id_usuario'] = $id_usuario;
                     $_SESSION['tipo_usuario'] = $tipo_usuario;
