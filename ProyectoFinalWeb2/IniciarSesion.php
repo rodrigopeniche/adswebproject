@@ -12,7 +12,7 @@
             }
             
             function checar_disponibilidad($usuario){
-                $comprobacion = false;
+                /*$comprobacion = false;
                 $myfile = fopen("bitacora.txt", "r") or die("Unable to open file!");
                 $contrasena_hash;
                 
@@ -32,16 +32,38 @@
                 if(!$comprobacion){
                     echo "NO EXISTE EL USUARIO";
                 }
-                fclose($myfile);
+                fclose($myfile);*/
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $database = "publicis";
+                $sql = "SELECT * FROM usuario where id_usuario =" ."'".$usuario."'";
+                $conn = new mysqli($servername, $username, $password,$database);
+                $result = $conn->query($sql);
+                $row = mysqli_fetch_assoc($result);
+                $id_usuario = $row['id_usuario'];
+                $tipo_usuario = $row['tipo'];
+                $db_contrasena_hash = $row['contrasena'];
+                checar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario);
+                $conn->close();
+                return $result;
             }
             
-            function checar_contrasena($contrasena_hash){
+            function checar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario){
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
-                $digitos = strlen($contrasena_hash) - 2;
-                $contrasena_hash = substr($contrasena_hash, 0, $digitos);
-                if($contrasena == $contrasena_hash){
+                /*$digitos = strlen($contrasena) - 2;
+                $contrasena_hash = substr($contrasena, 0, $digitos);*/
+                #echo $contrasena_hash;
+                echo " ";
+                echo $contrasena;
+                echo " ";
+                echo $db_contrasena_hash;
+
+                if($contrasena == $db_contrasena_hash){
                     echo "INICIASTE SESION";
                     $_SESSION['inicio'] = true;
+                    $_SESSION['id_usuario'] = $id_usuario;
+                    $_SESSION['tipo_usuario'] = $tipo_usuario;
                     header('Location: Inicio.php');
                 } else {
                     echo "NOMBRE DE USUARIO O CONTRASENA ESTA MAL";

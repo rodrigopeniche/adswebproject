@@ -61,7 +61,7 @@
 			</nav>
 	</div> 
 	</header> 
-     <form action="" method="POST">
+     <form name = "user-data" action="" method="POST">
        
        
         <h2>Por favor ingrese sus datos de registro</h2>
