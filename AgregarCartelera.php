@@ -15,6 +15,8 @@ and open the template in the editor.
     <body>
         <?php
         include("BaseDeDatos.php"); 
+        include("ValidacionSesionExpirada.php");
+        $validacionSesion = new ValidacionSesionExpirada();
             function agregarCartelera(){
                 $baseDatos = new BaseDeDatos();
                 $id = $_POST['id'];
@@ -27,8 +29,9 @@ and open the template in the editor.
                     $baseDatos->EjecutarQuery($query);
                 }
             }
-
+            
             if(isset($_POST['submit'])){ 
+                $validacionSesion->validarSesionExpirada();
                 agregarCartelera();
             }  
             
