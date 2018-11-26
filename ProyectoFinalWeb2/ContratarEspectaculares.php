@@ -54,7 +54,7 @@ and open the template in the editor.
     <header class="main-header">	
         <div class="container container--flex">
             <div class ="logo-container column column--50">
-                <h1 class="logo">Inicio</h1>
+                <h1 class="logo">Contratar</h1>
             </div>
             <div class="main-header__contactInfo column column--50">
                 <p class="main-header__contactInfo__phone">
