@@ -74,6 +74,11 @@ and open the template in the editor.
                 }
             ?>
     </nav>
+    
+    <section class="banner">
+        <img src="imagenes/imagenesInicio/banner.jpg" alt="" class="banner__img">
+    	<div class="banner__content">Publicidad al alcance de un click</div>
+    </section>
 	
 	<header>
 		<div class="wrapper">
