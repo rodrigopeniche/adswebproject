@@ -9,8 +9,9 @@ and open the template in the editor.
         <title>Contrato</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styleDaniel.css">
-        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="HeaderStyleSheet.css">
+        <link rel="stylesheet" href="ContratarStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
         <script src="contact-form-validation.js"></script>
         <script>
             function getText(element) {
