@@ -1,9 +1,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estiloForm.css"/>
-        <title></title>
+        <link href="EstiloVentanasCancelar.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
+        <title>Cancelar Radio</title>
     </head>
     <body>
         <?php
@@ -65,10 +66,13 @@
 
 	</header>
         
+        <div class="Cancel-box">
+        <h1>Numero de contrato a eliminar:</h1>
         <form method="post">
-            <label>Numero de contrato a eliminar:</label>
-            <input type="text" name="clave" required="">
+            
+            <input type="text" name="clave" required="" placeholder="Ingresar Numero Contrato TV">
             <input type="submit" name="submit" value="eliminar">
         </form>
+        </div>
     </body>
 </html>
