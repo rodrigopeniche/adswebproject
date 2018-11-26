@@ -15,11 +15,11 @@
                 $baseDatos = new BaseDeDatos();
                 $clave = $_POST['clave'];
                 $usuario = $_SESSION['usuario'];
-                $query = "DELETE FROM contratacionradio WHERE id ="
+                $query = "DELETE FROM contratacionradio WHERE estacion ="
                         .$clave
-                        ." AND clv_usuario ="
+                        ." AND clv_usuario ='"
                         .$usuario
-                        .";";
+                        ."';";
                 $baseDatos->EjecutarQuery($query);
             }
 
