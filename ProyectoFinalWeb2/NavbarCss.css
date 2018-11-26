@@ -30,13 +30,13 @@ header::after{
 
 .logo{
     float:left;
-    padding 10px,0;
+    padding: 10px,0;
 }
 
 header img{
-   width 10%; 
+   width: 10%; 
    height: 10%;
-   margin left: 0;
+   margin_left: 0;
     
 }
 nav {
@@ -49,7 +49,7 @@ nav {
 }
 nav ul {
   list-style: none;
-    margin 0;
+    margin: 0;
     padding:0;
  
 }

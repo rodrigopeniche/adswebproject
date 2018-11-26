@@ -76,7 +76,7 @@
             <select name="text selection" onchange="getText(this)">
                 <option value="">Elige una Opcion</option>
                 <option value="cliente">cliente</option>
-                <option value="admin">admin</option>
+                <option value="admin">administrador</option>
             </select>
             <input type="hidden" name="txt_holder" id="txt_holder">
             <input type="submit" name="submit" value="Registrar Datos">

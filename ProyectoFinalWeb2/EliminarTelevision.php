@@ -39,19 +39,19 @@
 
 
                             <?php
-//                                if($_SESSION['tipo_usuario'] == "administrador"){
-//                                    echo '<li><a href="VistaAdministrador.php"> Ver Anuncios</a></li>';
-//                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
-//                                    echo '<li><a href="VistaContratar.php"> Contratar</a></li>';
-//                                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
-//                                }
-//                                
-//                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-//                                    echo '<li><a href="IniciarSesion.php"> Iniciar Sesion</a></li>';
-//                                } else{
-//                                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
-//                                }
-//                                ?>
+                                if($_SESSION['tipo_usuario'] == "administrador"){
+                                    echo '<li><a href="VistaAdministrador.php"> Ver Anuncios</a></li>';
+                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                                    echo '<li><a href="VistaContratar.php"> Contratar</a></li>';
+                                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
+                                }
+                                
+                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                                    echo '<li><a href="IniciarSesion.php"> Iniciar Sesion</a></li>';
+                                } else{
+                                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
+                                }
+                                ?>
                         </ul>
                     </nav>
             </div> 

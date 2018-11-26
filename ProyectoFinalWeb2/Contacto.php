@@ -54,6 +54,7 @@ and open the template in the editor.
 
             </div>      
                 <?php
+                    session_start();
                     if($_SESSION['tipo_usuario'] == "administrador"){
                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
                     } else if ($_SESSION['tipo_usuario'] == "cliente"){
@@ -111,7 +112,7 @@ and open the template in the editor.
 				<a href="Servicio.php"> Servicios</a>
 				<a href="Contacto.php"> Contacto</a>
                                 <?php
-                                session_start();
+                                
                                 
                                     if($_SESSION['tipo_usuario'] == "administrador"){
                                         echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
