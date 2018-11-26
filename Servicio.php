@@ -8,10 +8,12 @@ and open the template in the editor.
 
 <head>
 
-	<meta charset ="UTF-8">
-	<title>Document </title>
-	<link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="estilos_slider.css">
+    <meta charset ="UTF-8">
+    <title>Servicios </title>
+    <link rel="stylesheet" href="HeaderStyleSheet.css">
+    <link rel="stylesheet" href="ServiciosStyleSheet.css">
+    <link rel="stylesheet" href="SliderStyleSheet.css">
+    <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
 </head>
 
 <body>
