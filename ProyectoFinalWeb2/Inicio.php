@@ -208,36 +208,6 @@ and open the template in the editor.
         </div>
        
     </main>
-	
-	<header>
-		<div class="wrapper">
-			<div class ="logo">Publicis </div>
-
-			<nav>
-			
-				<a href="Inicio.php"> Inicio</a>
-				<a href="Nosotros.php"> Nosotros</a>
-				<a href="Servicio.php"> Servicios</a>
-				<a href="Contacto.php"> Contacto</a>
-                                <?php
-                                
-                                    if($_SESSION['tipo_usuario'] == "administrador"){
-                                        echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
-                                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
-                                        echo '<a href="VistaContratar.php"> Contratar</a>';
-                                        echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
-                                    }
-                                
-                                    if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-                                        echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
-                                    } else{
-                                        echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
-                                    }
-                                ?>
-
-			</nav>
-	</div> 
-	</header>
 
 	<script type="text/javascript">
 		function link(event){
@@ -257,72 +227,6 @@ and open the template in the editor.
 		}
 	</script>
 
-
-<div id=content-text>
-
-	<H1> Inicio </H1>
-        <div>
-            <img src="imagenes/meridamap.png" alt="Mapa de Mérida." onClick="link(event)">
-        </div>
-	<div class="section-text">
-	<h1 id="Noroeste">Noroeste:</h2>
-		<p>Avenida Mérida 2000 No. 557 por Calle 31'-1 y Calle 11-A'-1, Residencial Pensiones, CP. 97217 Mérida, Yuc.
-		<br>$2,000.00 mx al mes.
-		<br>Disponible.</p>
-
-		<p>Calle 52 No. 300 por Calle 51 y Calle 53, Francisco de Montejo, CP. 97203 Mérida, Yuc.
-		<br>$5,000.00 mx al mes.
-		<br>Disponible.</p>
-
-		<p>Calle 43A No. 324 esquina con Circuito Colonias, Tanlum, CP. 97210 Mérida, Yuc.
-		<br>$8,000.00 mx al mes.
-		<br>No disponible actualmente.</p>
-	</div>
-	<div class="section-text">
-	<h1 id="Noreste">Noreste:</h2>
-		<p>Azalea, Calle 7 No. 177, esquina con Calle 9, Residencial San Carlos, CP. 97130 Mérida, Yuc.
-		<br>$7,500.00 mx al mes.
-		<br>No disponible actualmente.</p>
-		
-		<p>Calle No. 19A Diagonal, esquina con Avenida Yucatán, Jardines del Nte. CP. 97139 Mérida, Yuc.
-		<br>$6,000.00 mx al mes.
-		<br>Disponible.</p>
-		
-		<p>Av. Andrés García Lavín, San Ramón Nte I, 97117 Mérida, Yuc.
-		<br>$8,000.00 mx al mes.
-		<br>Disponible.</p>
-	</div>
-	<div class="section-text">
-	<h1 id="Suroeste">Suroeste:</h2>
-		<p>Oxxo Xoclan, 65 A 1000, Xoclán, 97246 Mérida, Yuc.
-		<br>$6,000.00 mx al mes.
-		<br>Disponible.</p>
-		
-		<p>México 261, Cd Industrial, 97288 Mérida, Yuc.
-		<br>$5,000.00 mx al mes.
-		<br>Disponible.</p>
-
-		<p>Calle 16 No. 446D, El Roble Agrícola I, 97255 Mérida, Yuc.
-		<br>$5,000.00 mx al mes.
-		<br>Disponible.</p>
-	</div>
-	<div class="section-text">
-	<h1 id="Sureste">Sureste:</h2>
-		<p>Calle 69 No. 406, Morelos Oriente, 97174 Mérida, Yuc.
-		<br>$7,000.00 mx al mes.
-		<br>Disponible.</p>
-		
-		<p>Calle 42 No. 854 local 7 x 17, Colonia María Luisa, María Luisa, 97199 Mérida, Yuc.
-		<br>$6,000.00 mx al mes.
-		<br>Disponible.</p>
-
-		<p>Cto Colonias 773, Castilla Cámara, 97278 Mérida, Yuc.
-		<br>$5,000.00 mx al mes.
-		<br>Disponible.</p>
-	</div>
-
-	<br><br><br>
-</div>
 	<footer>
 		<p class="Foot" align="center">
                         		The Masters Of Softwae S.A de C.V&nbsp;&nbsp;
