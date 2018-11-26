@@ -104,6 +104,57 @@ and open the template in the editor.
             ?>
     </nav>
     
+    <div class="contenedorForm">
+        <div class="elementoform">
+            <div class="contenedor">
+                <div class="elemento">
+                    <h2>Contratar Anuncio en Radio</h2>
+                </div>
+                <div class="elemento">
+                    <form action="" method="post">
+                        Día de inicio:<br>
+                        <input type="text" name="diaInicio" value="">
+                        <br>
+                        Mes de inicio:<br>
+                        <input type="text" name="mesInicio" value="">
+                        <br>
+                        Año de inicio:<br>
+                        <input type="text" name="anoInicio" value="">
+                        <br>
+                        Dia de termino:<br>
+                        <input type="text" name="diaTermino" value="">
+                        <br>
+                        Mes de termino:<br>
+                        <input type="text" name="mesTermino" value="">
+                        <br>
+                        Año de termino:<br>
+                        <input type="text" name="anoTermino" value="">
+                        <br><br>
+                        Estaciones:
+                        <select name="Anuncios" onchange="getText(this)">
+                        <option>Selecciones una opcion</option>
+                        <?php
+                            $baseDatos = new BaseDeDatos();
+                            $sql = "Select estacion from radio";
+                            $result = $baseDatos->ObtenerResultado($sql);
+                            while($rows = mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <option><?php echo $rows['estacion']; ?></option>
+                        <?php
+                            }
+                        ?>
+                        </select>
+                        <input type="hidden" name="txt_holder" id="txt_holder">
+                        <br><br>
+
+                        <input type="submit" value="Aceptar" name="submit">
+                    </form>   
+                </div>
+            </div>
+        </div>  
+    </div>
+    
 <header>
 		<div class="wrapper">
 |			<div class ="logo">Publicis </div>
@@ -130,49 +181,6 @@ and open the template in the editor.
 			</nav>
 	</div> 
 </header>
-
-<h2>Contratar Anuncio en Radio</h2>
-
-<form action="" method="post">
-  Día de inicio:<br>
-  <input type="text" name="diaInicio" value="">
-  <br>
-  Mes de inicio:<br>
-  <input type="text" name="mesInicio" value="">
-  <br>
-  Año de inicio:<br>
-  <input type="text" name="anoInicio" value="">
-  <br>
-  Dia de termino:<br>
-  <input type="text" name="diaTermino" value="">
-  <br>
-  Mes de termino:<br>
-  <input type="text" name="mesTermino" value="">
-  <br>
-  Año de termino:<br>
-  <input type="text" name="anoTermino" value="">
-  <br><br>
-  Estaciones:
-  <select name="Anuncios" onchange="getText(this)">
-      <option>Selecciones una opcion</option>
-      <?php
-            $baseDatos = new BaseDeDatos();
-            $sql = "Select estacion from radio";
-            $result = $baseDatos->ObtenerResultado($sql);
-            while($rows = mysqli_fetch_assoc($result)){
-        ?>
-      
-      <option><?php echo $rows['estacion']; ?></option>
-        <?php
-            }
-        ?>
-  </select>
-  <input type="hidden" name="txt_holder" id="txt_holder">
-  <br><br>
-
-  <input type="submit" value="Aceptar" name="submit">
-</form> 
-
-
+<script src="btnMenuInteraccion.js"></script>
 </body>
 </html>

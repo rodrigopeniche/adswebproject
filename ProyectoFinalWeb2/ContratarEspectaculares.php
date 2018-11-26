@@ -151,8 +151,7 @@ and open the template in the editor.
                     </form>  
                 </div>
             </div>
-        </div>
-        
+        </div>  
     </div>
 
 <header>
