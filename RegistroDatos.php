@@ -22,13 +22,8 @@
                 $correo = $_POST['email'];
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
                 $tipoUsuario = $_POST['txt_holder'];
-                try {
-                    $query = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');";
-                    $baseDatos->EjecutarQuery($query);
-                  }
-                  catch(Exception $e) {
-                    echo "El nombre de usuario no está disponible";
-                  }
+                $query = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');";
+                $baseDatos->EjecutarQuery($query);
             }
 
             if(isset($_POST['submit'])){ 

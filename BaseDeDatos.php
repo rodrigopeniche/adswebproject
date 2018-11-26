@@ -15,9 +15,13 @@
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $error = $conn->error;
+                error_log($error);
+                if (strpos($sql, "INSERT INTO usuario") === 0) {
+                    echo "El nombre de usuario no está disponible";
+                 }
+                
             }
-
             $conn->close();
         }
         
