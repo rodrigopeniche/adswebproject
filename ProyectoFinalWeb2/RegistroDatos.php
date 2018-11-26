@@ -4,8 +4,7 @@
         
         <meta charset="UTF-8">
         <title>Formulario1</title>
-        <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estiloForm.css"/>
+        
         <script>
             function getText(element) {
             var textHolder = element.options[element.selectedIndex].text
@@ -14,9 +13,9 @@
         </script>
         <meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1.0
               maximum-scale=3.0,minimum-scale=1.0">
-        <link rel="stylesheet" href="InicioStyleSheet.css">
-        <link rel="stylesheet" href="HeaderStyleSheet.css">
-        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
+        <link href="EstiloRegistrarDatos.css" rel="stylesheet" type="text/css"/>
+        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <script src="jsDaniel.js"></script>
     </head>
     <body>
@@ -38,38 +37,25 @@
             }  
             
         ?>
-        <header class="main-header">	
-        <div class="container container--flex">
-            <div class ="logo-container column column--50">
-                <h1 class="logo">Inicio</h1>
-            </div>
-            <div class="main-header__contactInfo column column--50">
-                <p class="main-header__contactInfo__phone">
-                    <span class="icon-phone">999-999-999</span>
-                </p>
-                <p class="main-header__contactInfo__adress">
-                    <span class="icon-map-marca">Mérida,Yucatán, México</span>
-                </p>    
-            </div>    
-        </div>
-    </header>
-    <nav class="main-nav">
-    	<div class="container container--flex">
-    		<span class="icon-menu" id="btnmenu"></span>
-    		<ul class="menu" id="menu">
-    			<li class="menu__item">
-    				<a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Nosotros.php" class="menu__link"> Nosotros</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Servicio.php" class="menu__link "> Servicios</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Contacto.php" class="menu__link "> Contacto</a>
-    			</li>
-                        <?php
+        
+        
+                        
+    		
+         <header>
+           
+            
+		<div class="wrapper">
+                    <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
+
+                    <nav class="shift">
+                        <ul>
+
+                            <li><a href="#"> Inicio</a></li>
+                            <li><a href="#"> Nosotros</a></li>
+                            <li><a href="#"> Servicios</a></li>
+                            <li><a href="Servicio"> Contacto</a></li>
+                            <li><a href="Servicio.php"> Iniciar Sesion</a></li>
+<?php
                         session_start();
                         if($_SESSION['tipo_usuario'] == "administrador"){
                             echo '<li class="menu__item">';
@@ -94,37 +80,38 @@
                             echo '</li>';
                         }
                     ?>
-    		</ul>
-    		<div class="social-icon">
-    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
-    		</div>
-
-    	</div>      
-            
-    </nav>
-     <form name = "user-data" action="" method="POST">
+                              
+                        </ul>
+			</nav>
+	</div> 
+	</header> 
+     
+        <form action="" method="POST">
        
        
-        <h2>Por favor ingrese sus datos de registro</h2>
-        </select>
-            <label for="">nombre Usuario:</label>
-            <input type="text" name="usuario" required=""> 
+        
+        
+        <div class="register-box">
+            <h1 align="center">Por favor ingrese sus datos de registro</h1>
+            <label for="">Nombre usuario:</label>
+            <input type="text" name="usuario" required="" placeholder="Escribe tu Nombre de Usuario"> 
             <label for="">Correo:</label>
-            <input type="email" name="email" required=""> 
+            <input type="email" name="email" required="" placeholder="example@.com"> 
             <label for="">Contraseña: </label>
-            <input type="password" name="contrasena" required="">
+            <input type="password" name="contrasena" required="" placeholder="Escribe tu contraseña">
             <label for="">Tipo de Usuario: </label>
             <select name="text selection" onchange="getText(this)">
                 <option value="">Elige una Opcion</option>
                 <option value="cliente">cliente</option>
-                <option value="admin">administrador</option>
+                <option value="admin">admin</option>
             </select>
             <input type="hidden" name="txt_holder" id="txt_holder">
             <input type="submit" name="submit" value="Registrar Datos">
-            
+        </div> 
     </form>
-        
     </body>
+        
+    		
 </html>
 
 

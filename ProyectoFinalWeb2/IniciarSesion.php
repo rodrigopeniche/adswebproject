@@ -80,47 +80,52 @@
         
         <meta charset="UTF-8">
         <title>Formulario1</title>
-          <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estiloForm.css"/>
-        <meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1.0
-              maximum-scale=3.0,minimum-scale=1.0">
-        <link rel="stylesheet" href="InicioStyleSheet.css">
-        <link rel="stylesheet" href="HeaderStyleSheet.css">
-        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
+        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
+        <link href="estiloIniciarSesion.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        
+        
         <script src="jsDaniel.js"></script>
     </head>
     <body>
-        <header class="main-header">	
-        <div class="container container--flex">
-            <div class ="logo-container column column--50">
-                <h1 class="logo">Inicio</h1>
-            </div>
-            <div class="main-header__contactInfo column column--50">
-                <p class="main-header__contactInfo__phone">
-                    <span class="icon-phone">999-999-999</span>
-                </p>
-                <p class="main-header__contactInfo__adress">
-                    <span class="icon-map-marca">Mérida,Yucatán, México</span>
-                </p>    
-            </div>    
+        <header>
+           
+            
+		<div class="wrapper">
+                    <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
+
+                    <nav class="shift">
+                        <ul>
+
+                            <li><a href="#"> Inicio</a></li>
+                            <li><a href="#"> Nosotros</a></li>
+                            <li><a href="#"> Servicios</a></li>
+                            <li><a href="Servicio"> Contacto</a></li>
+                            <li><a href="Servicio.php"> Iniciar Sesion</a></li>
+
+
+                        </ul>
+                    </nav>
+            </div> 
+
+         
+	</header>
+        
+        <div class="login-box">
+        <img src="imagenes/avatar.png" class="Avatar"/>
+        <h1>Por favor inicia sesion</h1>
+        <form action="" method="POST">
+            <p>Usuario</p>
+            <input type="text" name="usuario" placeholder="Ingresa tu Usuario">
+            <p>Contraseña</p>
+            <input type="password" name="contrasena" placeholder="Ingresa tu Contraseña">
+            <input type="submit" name="submit" value="Ingresar">
+            <a href="#">Registrarse</a>    
+            </form>
+        
+        
         </div>
-    </header>
-    <nav class="main-nav">
-    	<div class="container container--flex">
-    		<span class="icon-menu" id="btnmenu"></span>
-    		<ul class="menu" id="menu">
-    			<li class="menu__item">
-    				<a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Nosotros.php" class="menu__link"> Nosotros</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Servicio.php" class="menu__link "> Servicios</a>
-    			</li>
-    			<li class="menu__item">
-    				<a href="Contacto.php" class="menu__link "> Contacto</a>
-    			</li>
+    
                         <?php
                         
                         if($_SESSION['tipo_usuario'] == "administrador"){
@@ -146,32 +151,6 @@
                             echo '</li>';
                         }
                     ?>
-    		</ul>
-    		<div class="social-icon">
-    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
-    		</div>
-
-    	</div>      
-            
-    </nav>
-        <form method="POST">
-        <h1>Bienvenido</h1>
-        <h2>Inicia sesion para continuar</h2>
-        
-       
-            <label for="">Usuario </label>
-            <input type="text"  name="usuario" required>
-            <label for="">Contraseña </label>
-            
-            <input type="password" name="contrasena" required>
-            <input type="submit" name="submit" value="Iniciar Sesion">
-            
-            <label for="" >¿No cuentas con un usuario?</label>
-            
-            <a href="RegistroDatos.php" class="button">Registrarse</a>
-            <a href="RecuperarContrasena.php" class="button">Recuperar contraseña</a>
-            
-    </form>
-        
+    		
     </body>
 </html>

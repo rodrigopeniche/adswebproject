@@ -8,29 +8,31 @@ and open the template in the editor.
     <head>
         <title>Contacto</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
         <link rel="stylesheet" href="HeaderStyleSheet.css">
         <link rel="stylesheet" href="ContactoStyleSheet.css"> 
+        <link rel="stylesheet" href="ServiciosStyleSheet.css">
+        <link rel="stylesheet" href="SliderStyleSheet.css">
         <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
         <script src="contact-form-validation.js"></script>
     </head>
     <body>
         
-        <header class="main-header">	
-            <div class="container container--flex">
-                <div class ="logo-container column column--50">
-                    <h1 class="logo">Inicio</h1>
-                </div>
-                <div class="main-header__contactInfo column column--50">
-                    <p class="main-header__contactInfo__phone">
-                        <span class="icon-phone">999-999-999</span>
-                    </p>
-                    <p class="main-header__contactInfo__adress">
-                        <span class="icon-map-marca">Mérida,Yucatán, México</span>
-                    </p>    
-                </div>    
-            </div>
-        </header>
+        <header class="main-header">   
+                    <div class="container container--flex">
+                        <div class ="logo-container column column--50">
+                            <h1 class="logo">Logo</h1>
+                        </div>
+                        <div class="main-header__contactInfo column column--50">
+                            <p class="main-header__contactInfo__phone">
+                                <span class="icon-phone">999-999-999</span>
+                            </p>
+                            <p class="main-header__contactInfo__adress">
+                                <span class="icon-map-marca">Mérida,Yucatán, México</span>
+                            </p>    
+                        </div>    
+                    </div>
+    </header>
         <nav class="main-nav">
             <div class="container container--flex">
                     <span class="icon-menu" id="btnmenu"></span>

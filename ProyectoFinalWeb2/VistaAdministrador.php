@@ -6,6 +6,8 @@ if(isset($_POST['agregarcartelera'])){
     echo pene;
 }
 ?>
+
+
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -60,19 +62,26 @@ if(isset($_POST['agregarcartelera'])){
 
                             
                                 <?php
-//                                if($_SESSION['tipo_usuario'] == "administrador"){
-//                                    echo '<li><a href="VistaAdministrador.php"> Ver Anuncios</a></li>';
-//                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
-//                                    echo '<li><a href="VistaContratar.php"> Contratar</a></li>';
-//                                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
-//                                }
-//                                
-//                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-//                                    echo '<li><a href="IniciarSesion.php"> Iniciar Sesion</a></li>';
-//                                } else{
-//                                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
-//                                }
-//                                ?>
+                                if($_SESSION['tipo_usuario'] == "administrador"){
+                                    echo '<li><a href="VistaAdministrador.php"> Ver Anuncios</a></li>';
+                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                                    echo '<li><a href="VistaContratar.php"> Contratar</a></li>';
+                                    echo '<li><a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a></li>';
+                                }
+                                
+                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                                    echo '<li><a href="IniciarSesion.php"> Iniciar Sesion</a></li>';
+                                } else{
+                                    echo '<li><a href="CerrarSesion.php"> Cerrar Sesion</a></li>';
+                                }
+                                ?>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                             </ul>
 			</nav>
 	</div> 
