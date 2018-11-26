@@ -104,16 +104,17 @@
         <h2>Inicia sesion para continuar</h2>
         
        
-           <label for="">Usuario </label>
-           <input type="text"  name="usuario" required>
+            <label for="">Usuario </label>
+            <input type="text"  name="usuario" required>
             <label for="">Contraseña </label>
             
             <input type="password" name="contrasena" required>
             <input type="submit" name="submit" value="Iniciar Sesion">
-               
-            <label for="" >¿No cuentas con un usuario?,Registrate</label>
+            
+            <label for="" >¿No cuentas con un usuario?</label>
             
             <a href="RegistroDatos.php" class="button">Registrarse</a>
+            <a href="RecuperarContrasena.php" class="button">Recuperar contraseña</a>
             
     </form>
         
