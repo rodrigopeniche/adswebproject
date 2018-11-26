@@ -100,6 +100,22 @@ and open the template in the editor.
     			</div>		
     		</div>		
     	</section>
+        
+        <section >
+    		<div class="contenedorMapa ">
+    			<div class="elementoMapa">
+    				<img src="imagenes/imagenesInicio/meridamap.png" alt="" onClick="link(event)">
+    			</div>	
+    		</div>		
+    	</section>
+
+    	<section class="group group--color">
+    		<div class="container">
+    			<h2 class="main__title"> Bienvenido a tu página de publicidad</h2>
+    			<p class="main__txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    		</div>	
+    	</section>
+ 
 
     	
     </main>
