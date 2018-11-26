@@ -305,6 +305,7 @@ and open the template in the editor.
 	
     	</div>
     </div>
+    <script src="btnMenuInteraccion.js"></script>
 </body>
 
 </html>
