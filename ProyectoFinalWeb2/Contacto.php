@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="HeaderStyleSheet.css">
+        <link rel="stylesheet" href="ContactoStyleSheet.css">        
         <script src="contact-form-validation.js"></script>
     </head>
     <body>
@@ -67,8 +68,8 @@ and open the template in the editor.
                 ?>
         </nav>
         
-        <div class="contenedorContacto">
-            <div class="elementoContacto">
+        <div class="row">
+            <div class="column">
                 <form name="contact-form">
                     Nombre: <br>
                     <input type="text" size="40" name="name">
@@ -91,7 +92,8 @@ and open the template in the editor.
                     
                 <p id="demo"></p>
             </div>
-            <div class="elementoContacto">
+            <div class="column">
+                
                 <div id="googleMap" style="width:100%;height:400px;"></div>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkFZJJ4QSmM0qin__AFeEB90SwDNN8oWk&callback=myMap"></script>
             </div>
