@@ -13,9 +13,12 @@ and open the template in the editor.
 
 	<meta charset ="UTF-8">
 	<title>Inicio</title>
-	<link rel="stylesheet" href="estilos.css">
-	<link rel="stylesheet" href="estilos_slider.css">
-
+        <meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1.0
+              maximum-scale=3.0,minimum-scale=1.0">
+        <link rel="stylesheet" href="InicioStyleSheet.css">
+        <link rel="stylesheet" href="HeaderStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
+        <script src="jsDaniel.js"></script>
 	
 </head>
 <body>
