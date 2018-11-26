@@ -71,6 +71,13 @@ and open the template in the editor.
                 }
             ?>
     </nav>
+    
+    <section class="seccionInicial">
+        <div class="container">
+            <h2 class="main__title"> Bienvenido a tu página de publicidad</h2>
+            <p class="main__txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>  
+    </section>
 
 	<header>
 		<div class="wrapper" >
