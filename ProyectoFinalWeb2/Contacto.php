@@ -66,6 +66,36 @@ and open the template in the editor.
                     }
                 ?>
         </nav>
+        
+        <div class="contenedorContacto">
+            <div class="elementoContacto">
+                <form name="contact-form">
+                    Nombre: <br>
+                    <input type="text" size="40" name="name">
+                    <br><br>
+                        
+                    Correo: <br>
+                    <input name="email" type="text" size="40">
+                    <br><br>
+                        
+                    Asunto: <br>
+                    <input type="text" name="subject" size="40">
+                    <br><br>
+                    
+                    Mensaje: <br>
+                    <textarea rows="4" cols="60" name="message"></textarea>
+                    <br><br>
+                        
+                    <button type="button" onclick="validateForm()">Enviar!</button>                       
+                </form>
+                    
+                <p id="demo"></p>
+            </div>
+            <div class="elementoContacto">
+                <div id="googleMap" style="width:100%;height:400px;"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkFZJJ4QSmM0qin__AFeEB90SwDNN8oWk&callback=myMap"></script>
+            </div>
+        </div>
        
         <header>
 		<div class="wrapper">
@@ -96,39 +126,8 @@ and open the template in the editor.
 
 			</nav>
 	</div> 
-
-
 	</header>
-        <div class="row">
-            <div class="column">
-                <form name="contact-form">
-                    Nombre: <br>
-                    <input type="text" size="40" name="name">
-                    <br><br>
-                        
-                    Correo: <br>
-                    <input name="email" type="text" size="40">
-                    <br><br>
-                        
-                    Asunto: <br>
-                    <input type="text" name="subject" size="40">
-                    <br><br>
-                    
-                    Mensaje: <br>
-                    <textarea rows="4" cols="60" name="message"></textarea>
-                    <br><br>
-                        
-                    <button type="button" onclick="validateForm()">Enviar!</button>                       
-                </form>
-                    
-                <p id="demo"></p>
-            </div>
-            <div class="column">
-                
-                <div id="googleMap" style="width:100%;height:400px;"></div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkFZJJ4QSmM0qin__AFeEB90SwDNN8oWk&callback=myMap"></script>
-            </div>
-        </div>
+        
         <footer>
 		<p class="Foot" align="center">
                         		The Masters Of Softwae S.A de C.V&nbsp;&nbsp;
