@@ -32,6 +32,10 @@
             $database = "publicis";
             $conn = new mysqli($servername, $username, $password,$database);
             $result = $conn->query($sql);
+            if($result === FALSE){
+                $error = $conn->error;
+                error_log($error);
+            } 
             $conn->close();
             return $result;
                     
