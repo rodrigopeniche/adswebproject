@@ -116,7 +116,7 @@ include("BaseDeDatos.php");
 
                     <?php
                         $baseDatos = new BaseDeDatos();
-                        $sql = "Select * from contratacionradio where clv_usuario =".$usuario.";";
+                        $sql = "Select * from contratacionradio where clv_usuario ='".$usuario."';";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
@@ -149,7 +149,7 @@ include("BaseDeDatos.php");
                     <?php
                         $baseDatos = new BaseDeDatos();
                         $usuario = $_SESSION['usuario'];
-                        $sql = "Select * from contrataciontv where clv_usuario =".$usuario.";";
+                        $sql = "Select * from contrataciontv where clv_usuario ='".$usuario."';";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
