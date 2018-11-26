@@ -54,30 +54,30 @@ and open the template in the editor.
     				<a href="Contacto.php" class="menu__link "> Contacto</a>
     			</li>
                         <?php
-                    session_start();
-                    if($_SESSION['tipo_usuario'] == "administrador"){
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
-                        echo '</li>';
-                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaContratar.php" class="menu__link "> Contratar</a>';
-                        echo '</li>';
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaVerContrataciones.php" class="menu__link "> Ver Mis Contrataciones</a>';
-                        echo '</li>';
-                    }
+                        session_start();
+                        if($_SESSION['tipo_usuario'] == "administrador"){
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
+                            echo '</li>';
+                        } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaContratar.php" class="menu__link "> Contratar</a>';
+                            echo '</li>';
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaVerContrataciones.php" class="menu__link "> Ver Mis Contrataciones</a>';
+                            echo '</li>';
+                        }
 
-                    if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-                        echo '<li class="menu__item">';
-                        echo '<a href="IniciarSesion.php" class="menu__link "> Iniciar Sesion</a>';
-                        echo '</li>';
-                    } else{
-                        echo '<li class="menu__item">';
-                        echo '<a href="CerrarSesion.php" class="menu__link "> Cerrar Sesion</a>';
-                        echo '</li>';
-                    }
-                ?>
+                        if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                            echo '<li class="menu__item">';
+                            echo '<a href="IniciarSesion.php" class="menu__link "> Iniciar Sesion</a>';
+                            echo '</li>';
+                        } else{
+                            echo '<li class="menu__item">';
+                            echo '<a href="CerrarSesion.php" class="menu__link "> Cerrar Sesion</a>';
+                            echo '</li>';
+                        }
+                    ?>
     		</ul>
     		<div class="social-icon">
     			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			

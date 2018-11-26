@@ -62,7 +62,7 @@
                 if($contrasena == $db_contrasena_hash){
                     echo "INICIASTE SESION";
                     $_SESSION['inicio'] = true;
-                    $_SESSION['id_usuario'] = $id_usuario;
+                    $_SESSION['usuario'] = $id_usuario;
                     $_SESSION['tipo_usuario'] = $tipo_usuario;
                     header('Location: Inicio.php');
                 } else {
@@ -82,23 +82,78 @@
         <title>Formulario1</title>
           <link rel="stylesheet" href="estilos.css">
         <link rel="stylesheet" href="estiloForm.css"/>
+        <meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1.0
+              maximum-scale=3.0,minimum-scale=1.0">
+        <link rel="stylesheet" href="InicioStyleSheet.css">
+        <link rel="stylesheet" href="HeaderStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
+        <script src="jsDaniel.js"></script>
     </head>
     <body>
-        <header>
-		<div class="wrapper">
-|			<div class ="logo">Publicis </div>
+        <header class="main-header">	
+        <div class="container container--flex">
+            <div class ="logo-container column column--50">
+                <h1 class="logo">Inicio</h1>
+            </div>
+            <div class="main-header__contactInfo column column--50">
+                <p class="main-header__contactInfo__phone">
+                    <span class="icon-phone">999-999-999</span>
+                </p>
+                <p class="main-header__contactInfo__adress">
+                    <span class="icon-map-marca">Mérida,Yucatán, México</span>
+                </p>    
+            </div>    
+        </div>
+    </header>
+    <nav class="main-nav">
+    	<div class="container container--flex">
+    		<span class="icon-menu" id="btnmenu"></span>
+    		<ul class="menu" id="menu">
+    			<li class="menu__item">
+    				<a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Nosotros.php" class="menu__link"> Nosotros</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Servicio.php" class="menu__link "> Servicios</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Contacto.php" class="menu__link "> Contacto</a>
+    			</li>
+                        <?php
+                        
+                        if($_SESSION['tipo_usuario'] == "administrador"){
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
+                            echo '</li>';
+                        } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaContratar.php" class="menu__link "> Contratar</a>';
+                            echo '</li>';
+                            echo '<li class="menu__item">';
+                            echo '<a href="VistaVerContrataciones.php" class="menu__link "> Ver Mis Contrataciones</a>';
+                            echo '</li>';
+                        }
 
-			<nav>
-			
-				<a href="Inicio.php"> Inicio</a>
-				<a href="Nosotros.php"> Nosotros</a>
-				<a href="Servicio.php"> Servicios</a>
-				<a href="Contacto.php"> Contacto</a>
-                                <a href="IniciarSesion.php"> Iniciar Sesion</a>
+                        if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                            echo '<li class="menu__item">';
+                            echo '<a href="IniciarSesion.php" class="menu__link "> Iniciar Sesion</a>';
+                            echo '</li>';
+                        } else{
+                            echo '<li class="menu__item">';
+                            echo '<a href="CerrarSesion.php" class="menu__link "> Cerrar Sesion</a>';
+                            echo '</li>';
+                        }
+                    ?>
+    		</ul>
+    		<div class="social-icon">
+    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
+    		</div>
 
-			</nav>
-	</div> 
-	</header>
+    	</div>      
+            
+    </nav>
         <form method="POST">
         <h1>Bienvenido</h1>
         <h2>Inicia sesion para continuar</h2>

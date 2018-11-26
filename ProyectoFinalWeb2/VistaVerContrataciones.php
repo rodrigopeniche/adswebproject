@@ -83,7 +83,8 @@ include("BaseDeDatos.php");
 
                     <?php
                         $baseDatos = new BaseDeDatos();
-                        $sql = "Select * from carteleracontratado where clv_usuario =".$usuario.";";
+                        $usuario = $_SESSION['usuario'];
+                        $sql = "Select * from carteleracontratado where clv_usuario ='".$usuario."';";
                         $result = $baseDatos->ObtenerResultado($sql);
                         while($rows = mysqli_fetch_assoc($result)){
                     ?>     
