@@ -10,7 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="HeaderStyleSheet.css">
-        <link rel="stylesheet" href="ContactoStyleSheet.css">        
+        <link rel="stylesheet" href="ContactoStyleSheet.css"> 
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
         <script src="contact-form-validation.js"></script>
     </head>
     <body>
