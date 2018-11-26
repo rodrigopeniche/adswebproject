@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="HeaderStyleSheet.css">
+        <link rel="stylesheet" href="ContratarStyleSheet.css">       
         <script src="contact-form-validation.js"></script>
         <script>
             function getText(element) {

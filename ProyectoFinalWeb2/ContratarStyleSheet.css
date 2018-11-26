@@ -8,3 +8,11 @@ and open the template in the editor.
     Author     : Moises
 */
 
+body{
+    margin: 0;
+    padding: 0;
+    background: url(imagenes/VentanasAgregarFondo.jpeg);
+    background-size: cover;
+    background-position: center;
+   font-family: 'Work Sans', sans-serif;
+}
