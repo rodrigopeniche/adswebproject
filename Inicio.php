@@ -88,6 +88,19 @@ and open the template in the editor.
     		</div>	
     	</section>
 
+    	<section class="group main__about__description">
+    		<div class="container container--flex">
+    			<div class="column column--50">
+    				<img src="imagenes/imagenesInicio/principal.jpg" alt="" >
+    			</div>
+    			<div class="column column--50">
+    				<h3 class="column__title">Ciudad de Mérida</h3>
+    				<p class="column__txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    				<a href="" class="btn btn--contact">Contact</a>
+    			</div>		
+    		</div>		
+    	</section>
+
     	
     </main>
 	<header>
