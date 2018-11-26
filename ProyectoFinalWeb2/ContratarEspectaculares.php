@@ -11,7 +11,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="HeaderStyleSheet.css">
-        <link rel="stylesheet" href="ContratarStyleSheet.css">       
+        <link rel="stylesheet" href="ContratarStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
         <script src="contact-form-validation.js"></script>
         <script>
             function getText(element) {
@@ -102,6 +103,58 @@ and open the template in the editor.
                 }
             ?>
     </nav>
+    
+    <div class="contenedorForm">
+        <div class="elementoform">
+            <div class="contenedor">
+                <div class="elemento">
+                    <h2>Contratar Espectaculares</h2>
+                </div>
+                <div class="elemento">
+                    <form action="" method="post">
+                        Día de inicio:<br>
+                        <input type="text" name="diaInicio" value="">
+                        <br>
+                        Mes de inicio:<br>
+                        <input type="text" name="mesInicio" value="">
+                        <br>
+                        Año de inicio:<br>
+                        <input type="text" name="anoInicio" value="">
+                        <br>
+                        Dia de termino:<br>
+                        <input type="text" name="diaTermino" value="">
+                        <br>
+                        Mes de termino:<br>
+                        <input type="text" name="mesTermino" value="">
+                        <br>
+                        Año de termino:<br>
+                        <input type="text" name="anoTermino" value="">
+                        <br><br>
+                        Anuncios:
+                        <select name="Anuncios" onchange="getText(this)">
+                          <option>Selecciones una opcion</option>
+                            <?php
+                                $baseDatos = new BaseDeDatos();
+                                $sql = "Select id from carteleras";
+                                $result = $baseDatos->ObtenerResultado($sql);
+                                while($rows = mysqli_fetch_assoc($result)){
+                            ?>
+                          <option><?php echo $rows['id']; ?></option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+                        <input type="hidden" name="txt_holder" id="txt_holder">
+                        <br><br>
+
+                        <input type="submit" value="Aceptar" name="submit">
+                    </form>  
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
 <header>
 		<div class="wrapper">
 |			<div class ="logo">Publicis </div>
@@ -129,48 +182,6 @@ and open the template in the editor.
 			</nav>
 	</div> 
 </header>
-
-<h2>Contratar Espectaculares</h2>
-
-<form action="" method="post">
-  Día de inicio:<br>
-  <input type="text" name="diaInicio" value="">
-  <br>
-  Mes de inicio:<br>
-  <input type="text" name="mesInicio" value="">
-  <br>
-  Año de inicio:<br>
-  <input type="text" name="anoInicio" value="">
-  <br>
-  Dia de termino:<br>
-  <input type="text" name="diaTermino" value="">
-  <br>
-  Mes de termino:<br>
-  <input type="text" name="mesTermino" value="">
-  <br>
-  Año de termino:<br>
-  <input type="text" name="anoTermino" value="">
-  <br><br>
-  Anuncios:
-  <select name="Anuncios" onchange="getText(this)">
-      <option>Selecciones una opcion</option>
-        <?php
-            $baseDatos = new BaseDeDatos();
-            $sql = "Select id from carteleras";
-            $result = $baseDatos->ObtenerResultado($sql);
-            while($rows = mysqli_fetch_assoc($result)){
-        ?>
-      <option><?php echo $rows['id']; ?></option>
-        <?php
-            }
-        ?>
-  </select>
-  <input type="hidden" name="txt_holder" id="txt_holder">
-  <br><br>
-
-  <input type="submit" value="Aceptar" name="submit">
-</form> 
-
-
+<script src="btnMenuInteraccion.js"></script>
 </body>
 </html>
