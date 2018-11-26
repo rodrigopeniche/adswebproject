@@ -44,6 +44,7 @@
                 $id_usuario = $row['id_usuario'];
                 $tipo_usuario = $row['tipo'];
                 $db_contrasena_hash = $row['contrasena'];
+                include("VerificacionIntentoInicioSesion.php");
                 validar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario);
                 $conn->close();
                 return $result;
