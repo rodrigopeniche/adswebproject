@@ -50,6 +50,59 @@ and open the template in the editor.
                 agregarRadio();
             }  
         ?>
+    
+    <header class="main-header">	
+        <div class="container container--flex">
+            <div class ="logo-container column column--50">
+                <h1 class="logo">Contratar</h1>
+            </div>
+            <div class="main-header__contactInfo column column--50">
+                <p class="main-header__contactInfo__phone">
+                    <span class="icon-phone">999-999-999</span>
+                </p>
+                <p class="main-header__contactInfo__adress">
+                    <span class="icon-map-marca">Mérida,Yucatán, México</span>
+                </p>    
+            </div>    
+        </div>
+    </header>
+    <nav class="main-nav">
+    	<div class="container container--flex">
+    		<span class="icon-menu" id="btnmenu"></span>
+    		<ul class="menu" id="menu">
+    			<li class="menu__item">
+    				<a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Nosotros.php" class="menu__link"> Nosotros</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Servicio.php" class="menu__link "> Servicios</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Contacto.php" class="menu__link "> Contacto</a>
+    			</li>
+    		</ul>
+    		<div class="social-icon">
+    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
+    		</div>
+
+    	</div>      
+            <?php
+                if($_SESSION['tipo_usuario'] == "administrador"){
+                    echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
+                } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                    echo '<a href="VistaContratar.php"> Contratar</a>';
+                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
+                }
+
+                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                    echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
+                } else{
+                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
+                }
+            ?>
+    </nav>    
 <header>
 		<div class="wrapper">
 |			<div class ="logo">Publicis </div>
