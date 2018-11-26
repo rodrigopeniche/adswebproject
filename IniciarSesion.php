@@ -52,12 +52,12 @@
             function validar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario){
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
                 /*$digitos = strlen($contrasena) - 2;
-                $contrasena_hash = substr($contrasena, 0, $digitos);*/
+                $contrasena_hash = substr($contrasena, 0, $digitos);
                 #echo $contrasena_hash;
                 echo " ";
                 echo $contrasena;
                 echo " ";
-                echo $db_contrasena_hash;
+                echo $db_contrasena_hash;*/
 
                 if($contrasena == $db_contrasena_hash){
                     echo "INICIASTE SESION";
@@ -65,7 +65,7 @@
                     $_SESSION['inicio'] = true;
                     $_SESSION['id_usuario'] = $id_usuario;
                     $_SESSION['tipo_usuario'] = $tipo_usuario;
-                     
+                    header('Location: Inicio.php');                   
                 } else {
                     echo "NOMBRE DE USUARIO O CONTRASENA ESTA MAL";
                 }
