@@ -44,12 +44,12 @@
                 $id_usuario = $row['id_usuario'];
                 $tipo_usuario = $row['tipo'];
                 $db_contrasena_hash = $row['contrasena'];
-                checar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario);
+                validar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario);
                 $conn->close();
                 return $result;
             }
             
-            function checar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario){
+            function validar_contrasena($db_contrasena_hash, $id_usuario, $tipo_usuario){
                 $contrasena = hash("sha256", $_POST['contrasena'], false);
                 /*$digitos = strlen($contrasena) - 2;
                 $contrasena_hash = substr($contrasena, 0, $digitos);*/
@@ -65,14 +65,14 @@
                     $_SESSION['inicio'] = true;
                     $_SESSION['id_usuario'] = $id_usuario;
                     $_SESSION['tipo_usuario'] = $tipo_usuario;
-                    header('Location: Inicio.php');
+                     
                 } else {
                     echo "NOMBRE DE USUARIO O CONTRASENA ESTA MAL";
                 }
             }
 
 
-            if(isset($_POST['submit'])){ 
+            if(isset($_POST['submit'])){
                 checar_disponibilidad($_POST['usuario']);
                 //crearbitacora("alta");;
             }  
