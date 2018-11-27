@@ -14,9 +14,9 @@ and open the template in the editor.
         <link href="estilos.css" rel="stylesheet" type="text/css"/>
         <script src="jsDaniel.js"></script>
         <link rel="stylesheet" href="HeaderStyleSheet.css">
-    <link rel="stylesheet" href="ServiciosStyleSheet.css">
-    <link rel="stylesheet" href="SliderStyleSheet.css">
-    <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="ServiciosStyleSheet.css">
+        <link rel="stylesheet" href="SliderStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,8 @@ and open the template in the editor.
     <header class="main-header">   
                     <div class="container container--flex">
                         <div class ="logo-container column column--50">
-                            <h1 class="logo">Logo</h1>
+                            <!--<h1 class="logo">Logo</h1>-->
+                            <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
                         </div>
                         <div class="main-header__contactInfo column column--50">
                             <p class="main-header__contactInfo__phone">
