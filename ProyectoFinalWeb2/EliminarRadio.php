@@ -4,8 +4,9 @@
         <link rel="stylesheet" href="estilos.css">
         <link href="EstiloVentanasCancelar.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="HeaderStyleSheet.css">
-    <link rel="stylesheet" href="ServiciosStyleSheet.css">
-    <link rel="stylesheet" href="SliderStyleSheet.css">
+        <link rel="stylesheet" href="ServiciosStyleSheet.css">
+        <link rel="stylesheet" href="SliderStyleSheet.css">
+        <link href="https://file.myfontastic.com/qp8yPnhRsVhXCzhpKiRbnF/icons.css" rel="stylesheet">
         <title></title>
     </head>
     <body>
