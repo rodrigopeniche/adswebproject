@@ -147,9 +147,7 @@
                         }
                     ?>
     		</ul>
-    		<div class="social-icon">
-    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
-    		</div>
+
 
     	</div>      
             

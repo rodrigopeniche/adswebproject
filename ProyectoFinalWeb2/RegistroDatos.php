@@ -14,12 +14,15 @@
         <meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1.0
               maximum-scale=3.0,minimum-scale=1.0">
         <link href="EstiloRegistrarDatos.css" rel="stylesheet" type="text/css"/>
-        <link href="NavbarCss.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <!--<link href="NavbarCss.css" rel="stylesheet" type="text/css"/>-->
+        <!--<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">-->
         <script src="jsDaniel.js"></script>
+        <link rel="stylesheet" href="InicioStyleSheet.css">
+        <link rel="stylesheet" href="HeaderStyleSheet.css">
     </head>
     <body>
         <?php
+        session_start();
         include("BaseDeDatos.php"); 
             function agregarUsuario(){
                 $baseDatos = new BaseDeDatos();
@@ -29,6 +32,7 @@
                 $tipoUsuario = $_POST['txt_holder'];
                 $query = "INSERT INTO usuario VALUES ('".$usuario."','".$contrasena."','".$correo."','".$tipoUsuario."');" ;
                 $baseDatos->EjecutarQuery($query);
+                header('Location: IniciarSesion.php');
             }
 
             if(isset($_POST['submit'])){ 
@@ -37,26 +41,39 @@
             }  
             
         ?>
-        
-        
+ <header class="main-header">	
+        <div class="container container--flex">
+            <div class ="logo-container column column--50">
+                <h1 class="logo">Inicio</h1>
+            </div>
+            <div class="main-header__contactInfo column column--50">
+                <p class="main-header__contactInfo__phone">
+                    <span class="icon-phone">999-999-999</span>
+                </p>
+                <p class="main-header__contactInfo__adress">
+                    <span class="icon-map-marca">Mérida,Yucatán, México</span>
+                </p>    
+            </div>    
+        </div>
+    </header>
+    <nav class="main-nav">
+    	<div class="container container--flex">
+    		<span class="icon-menu" id="btnmenu"></span>
+    		<ul class="menu" id="menu">
+    			<li class="menu__item">
+    				<a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Nosotros.php" class="menu__link"> Nosotros</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Servicio.php" class="menu__link "> Servicios</a>
+    			</li>
+    			<li class="menu__item">
+    				<a href="Contacto.php" class="menu__link "> Contacto</a>
+    			</li>
+                        <?php
                         
-    		
-         <header>
-           
-            
-		<div class="wrapper">
-                    <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
-
-                    <nav class="shift">
-                        <ul>
-
-                            <li><a href="#"> Inicio</a></li>
-                            <li><a href="#"> Nosotros</a></li>
-                            <li><a href="#"> Servicios</a></li>
-                            <li><a href="Servicio"> Contacto</a></li>
-                            <li><a href="Servicio.php"> Iniciar Sesion</a></li>
-<?php
-                        session_start();
                         if($_SESSION['tipo_usuario'] == "administrador"){
                             echo '<li class="menu__item">';
                             echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
@@ -80,11 +97,12 @@
                             echo '</li>';
                         }
                     ?>
-                              
-                        </ul>
-			</nav>
-	</div> 
-	</header> 
+    		</ul>
+
+
+    	</div>      
+            
+    </nav>
      
         <form action="" method="POST">
        

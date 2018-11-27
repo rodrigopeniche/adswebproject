@@ -3,6 +3,9 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="estilos.css">
         <link rel="stylesheet" href="estiloForm.css"/>
+        <link rel="stylesheet" href="HeaderStyleSheet.css">
+    <link rel="stylesheet" href="ServiciosStyleSheet.css">
+    <link rel="stylesheet" href="SliderStyleSheet.css">
         <title></title>
     </head>
     <body>
@@ -21,43 +24,69 @@
                 eliminar();
             }
         ?>
-        <header>
-           
+       <header class="main-header">   
+                    <div class="container container--flex">
+                        <div class ="logo-container column column--50">
+                            <h1 class="logo">Logo</h1>
+                        </div>
+                        <div class="main-header__contactInfo column column--50">
+                            <p class="main-header__contactInfo__phone">
+                                <span class="icon-phone">999-999-999</span>
+                            </p>
+                            <p class="main-header__contactInfo__adress">
+                                <span class="icon-map-marca">Mérida,Yucatán, México</span>
+                            </p>    
+                        </div>    
+                    </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container container--flex">
+            <span class="icon-menu" id="btnmenu"></span>
+            <ul class="menu" id="menu">
+                <li class="menu__item">
+                    <a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
+                </li>
+                <li class="menu__item">
+                    <a href="Nosotros.php" class="menu__link"> Nosotros</a>
+                </li>
+                <li class="menu__item">
+                    <a href="Servicio.php" class="menu__link "> Servicios</a>
+                </li>
+                <li class="menu__item">
+                    <a href="Contacto.php" class="menu__link "> Contacto</a>
+                </li>
+                <?php
+                    session_start();
+                    if($_SESSION['tipo_usuario'] == "administrador"){
+                        echo '<li class="menu__item">';
+                        echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
+                        echo '</li>';
+                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                        echo '<li class="menu__item">';
+                        echo '<a href="VistaContratar.php" class="menu__link "> Contratar</a>';
+                        echo '</li>';
+                        echo '<li class="menu__item">';
+                        echo '<a href="VistaVerContrataciones.php" class="menu__link "> Ver Mis Contrataciones</a>';
+                        echo '</li>';
+                    }
+
+                    if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                        echo '<li class="menu__item">';
+                        echo '<a href="IniciarSesion.php" class="menu__link "> Iniciar Sesion</a>';
+                        echo '</li>';
+                    } else{
+                        echo '<li class="menu__item">';
+                        echo '<a href="CerrarSesion.php" class="menu__link "> Cerrar Sesion</a>';
+                        echo '</li>';
+                    }
+                ?>
+                
+            </ul>
+
             
-		<div class="wrapper">
-                    <img src="imagenes/logo.png" alt="Logotipo de Publicis" class="logo"/>
-
-                    <nav class="shift">
-                        <ul>
-
-                            <li><a href="#"> Inicio</a></li>
-                            <li><a href="#"> Nosotros</a></li>
-                            <li><a href="#"> Servicios</a></li>
-                            <li><a href="Servicio"> Contacto</a></li>
-                            <li><a href="Servicio.php"> Iniciar Sesion</a></li>
-
-
-
-                            <?php
-                                if($_SESSION['tipo_usuario'] == "administrador"){
-                                    echo '<li><a href="VistaAdministrador.php"> Ver Anuncios</a></li>';
-                                } else if ($_SESSION['tipo_usuario'] == "cliente"){
-                                    echo '<li><a href="VistaContratar.php"> Contratar</a></li>';
-                                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
-                                }
-                                
-                                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-                                    echo '<li><a href="IniciarSesion.php"> Iniciar Sesion</a></li>';
-                                } else{
-                                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
-                                }
-                                ?>
-                        </ul>
-                    </nav>
-            </div> 
-
-
-	</header>
+        </div>      
+            
+    </nav>
         
         <form method="post">
             <label>Canal a eliminar:</label>

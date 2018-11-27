@@ -21,8 +21,8 @@ and open the template in the editor.
         <script src="jsDaniel.js"></script>
 	
 </head>
-<body>
-    <header class="main-header">	
+    <body>
+        <header class="main-header">	
         <div class="container container--flex">
             <div class ="logo-container column column--50">
                 <h1 class="logo">Inicio</h1>
@@ -54,7 +54,7 @@ and open the template in the editor.
     				<a href="Contacto.php" class="menu__link "> Contacto</a>
     			</li>
                         <?php
-                        session_start();
+                        
                         if($_SESSION['tipo_usuario'] == "administrador"){
                             echo '<li class="menu__item">';
                             echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
@@ -80,7 +80,7 @@ and open the template in the editor.
                     ?>
     		</ul>
     		<div class="social-icon">
-    			<a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
+    			<a>></a> 			
     		</div>
 
     	</div>      
@@ -88,6 +88,7 @@ and open the template in the editor.
     </nav>
     
     <section class="banner">
+        &nbsp;
         <img src="imagenes/imagenesInicio/banner.jpg" alt="" class="banner__img">
     	<div class="banner__content">Publicidad al alcance de un click</div>
     </section>

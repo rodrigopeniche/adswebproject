@@ -75,9 +75,6 @@ and open the template in the editor.
                                 }
                             ?>
                     </ul>
-                    <div class="social-icon">
-                            <a href="" class="social-icon__link"><span class="icon-mail"></span></a> 			
-                    </div>
 
             </div>      
         </nav>
