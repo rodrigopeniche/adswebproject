@@ -1,9 +1,49 @@
 
+header{
+	width:100%;
+	overflow:hidden;
+	background: #252932;
+	margin-bottom: 20px;
+} 
 
+.wrapper {
+	width:90%;
+	max-width:1000px;
+	margin:auto;
+	overflow:hidden;
+}
 
-body{
-   background-color:#fff;
-   font-family: 'Work Sans', sans-serif;
+header .logo{
+	color:#f2f2f2;
+	font-size: 50px;
+	line-height:20px;
+	float: left;
+	padding_right: 20px;
+}
+
+header nav{
+
+	 float:right;
+	 line-height: 50px;
+}
+
+header nav a{
+
+	display:inline-block;
+	color: #fff;
+	text-decoration:none ;
+	padding:10px 20px;
+	line-height:normal;;
+	font-size: 20px;
+	font-weight: bold;
+	-transition: 500ms ease;
+}
+
+header nav a:hover{
+
+	background: #182C61;
+	border-radius:50px;
+
 }
 
 footer{
@@ -23,53 +63,27 @@ p.Foot{
 	font-size: 20px;
 }
 
-	
-#content-text #imagendiv{
-   width: 100%;
-   margin-left:100px;
+#content-text{
+	font-family: Arial;
+	font-style: italic;
 }
-#content-text #Acerca{
-	color: #444;
-        margin-top:-200px ;
-        padding: 0;
-        text-align: left;
+
+#content-text .section-text{
+	text-align:left;
+    overflow: auto;
+	background: #596275 ;
+	color: #f2f2f2;
 	font-size: 12pt;
-        width: 70%; 
-        height: 80%;
-        font-family: 'Montserrat', sans-serif;
+	border: 0.5em solid #f2f2f2;
+	font-family: Arial;
+	margin-left: 2em;
+	margin-right: 2em;
+    width: 100%; 
+    position: relative; 
 }
-
-#content-text .Vision{
-    margin-top: 100px;
-    padding-top:30px;
-    padding-left: 250px;
-    font-size: 20px;
-    color:#F9F2E7;
-    background:#fff fixed no-repeat 50% 50%;
-    background-image: url('imagenes/imagen-nosotros-vision.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 80%;
-       
-}
-
-#content-text .Nosotros{
-    
-    margin-top: 100px;
-    padding-top:30px;
-    padding-left: 100px;
-    font-size: 20px;
-    color:#F9F2E7;
-    background:#fff fixed no-repeat 50% 50%;
-    background-image: url('imagenes/nosotros.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 80%;
-}
-
 
 #content-text .section-text h1{
-    	text-align: center;
+    	background: #c44569;
         width: 100%;
     	font-family: sans-serif;
         font-size: 150%;
