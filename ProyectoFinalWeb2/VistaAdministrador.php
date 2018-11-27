@@ -2,9 +2,7 @@
 session_start();
 include("BaseDeDatos.php"); 
 
-if(isset($_POST['agregarcartelera'])){
-    echo pene;
-}
+
 ?>
 
 

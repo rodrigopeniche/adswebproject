@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -15,7 +15,7 @@ and open the template in the editor.
     <body>
         <?php
         include("BaseDeDatos.php"); 
-        include("ValidacionSesionExpirada.php");
+        //include("ValidacionSesionExpirada.php");
             function agregarCartelera(){
                 $baseDatos = new BaseDeDatos();
                 $id = $_POST['id'];
@@ -30,7 +30,7 @@ and open the template in the editor.
             }
 
             if(isset($_POST['submit'])){
-                validarSesionExpirada();
+                //validarSesionExpirada();
                 agregarCartelera();
             }  
             
