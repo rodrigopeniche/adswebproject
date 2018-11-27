@@ -8,7 +8,8 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estiloForm.css"/>
+        <link href="EstiloVentanasCancelar.css" rel="stylesheet" type="text/css"/>
+        
         <link rel="stylesheet" href="HeaderStyleSheet.css">
         <link rel="stylesheet" href="ServiciosStyleSheet.css">
         <link rel="stylesheet" href="SliderStyleSheet.css">
@@ -92,10 +93,13 @@ and open the template in the editor.
             </div>      
         </nav>
         
+       <div class="cancel-box">
+        <h1>Clave de cartelera a eliminar:</h1>
         <form method="post">
-            <label>Clave de cartelera a eliminar:</label>
-            <input type="text" name="clave" required="">
+            
+            <input type="text" name="clave" required="" placeholder="Ingrese la cartelera">
             <input type="submit" name="submit" value="eliminar">
         </form>
+        </div>
     </body>
 </html>

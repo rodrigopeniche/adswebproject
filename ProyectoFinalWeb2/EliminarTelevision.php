@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estiloForm.css"/>
+        <link href="EstiloVentanasCancelar.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="HeaderStyleSheet.css">
     <link rel="stylesheet" href="ServiciosStyleSheet.css">
     <link rel="stylesheet" href="SliderStyleSheet.css">
@@ -88,10 +88,14 @@
             
     </nav>
         
+         <div class="cancel-box">
+        <h1>Clave del canal a eliminar:</h1>
         <form method="post">
-            <label>Canal a eliminar:</label>
-            <input type="text" name="clave" required="">
+            
+            <input type="text" name="clave" required="" placeholder="Ingrese el canal">
             <input type="submit" name="submit" value="eliminar">
         </form>
+        </div>
+        
     </body>
 </html>
