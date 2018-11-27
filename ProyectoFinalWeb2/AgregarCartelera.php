@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -8,128 +8,99 @@ and open the template in the editor.
     <head>
         <title>Agregar cartelera</title>
         <meta charset="UTF-8">
-        <!--<link href="NavbarCss.css" rel="stylesheet" type="text/css"/>-->
-        
-        <link href="estiloVentanasAgregar.css" rel="stylesheet" type="text/css"/>
-        
-         <!--<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">-->
-        <link rel="stylesheet" href="HeaderStyleSheet.css">
-    <link rel="stylesheet" href="ServiciosStyleSheet.css">
-    <link rel="stylesheet" href="SliderStyleSheet.css">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styleDaniel.css">
         <script src="contact-form-validation-Cartelera.js"></script>
     </head>
     <body>
         <?php
         include("BaseDeDatos.php"); 
+        include("ValidacionSesionExpirada.php");
             function agregarCartelera(){
                 $baseDatos = new BaseDeDatos();
                 $id = $_POST['id'];
                 $direccion = $_POST['direccion'];
                 $titulo = $_POST['titulo'];
                 $precio = $_POST['precio'];
-                $query = "INSERT INTO carteleras VALUES (".floor($id).",'".$direccion."','".$titulo."',".floor($precio).");" ;
+                $query = "INSERT INTO carteleras VALUES ('".$id."','".$direccion."','".$titulo."','".$precio."');" ;
                 
-                if(is_numeric($id) && is_numeric($precio)){
+                if(is_int($id) && is_int($precio)){
                     $baseDatos->EjecutarQuery($query);
                 }
             }
-
+            
             if(isset($_POST['submit'])){ 
+                validarSesionExpirada();
                 agregarCartelera();
             }  
             
         ?>
-         <header class="main-header">   
-                    <div class="container container--flex">
-                        <div class ="logo-container column column--50">
-                            <h1 class="logo">Logo</h1>
-                        </div>
-                        <div class="main-header__contactInfo column column--50">
-                            <p class="main-header__contactInfo__phone">
-                                <span class="icon-phone">999-999-999</span>
-                            </p>
-                            <p class="main-header__contactInfo__adress">
-                                <span class="icon-map-marca">Mérida,Yucatán, México</span>
-                            </p>    
-                        </div>    
-                    </div>
-    </header>
-    <nav class="main-nav">
-        <div class="container container--flex">
-            <span class="icon-menu" id="btnmenu"></span>
-            <ul class="menu" id="menu">
-                <li class="menu__item">
-                    <a href="Inicio.php" class="menu__link menu__link--select"> Inicio</a>
-                </li>
-                <li class="menu__item">
-                    <a href="Nosotros.php" class="menu__link"> Nosotros</a>
-                </li>
-                <li class="menu__item">
-                    <a href="Servicio.php" class="menu__link "> Servicios</a>
-                </li>
-                <li class="menu__item">
-                    <a href="Contacto.php" class="menu__link "> Contacto</a>
-                </li>
+        <header>
+        <div class="wrapper">
+|           <div class ="logo">The Masters Of Software </div>
+
+            <nav>
+            
+                <a href="Inicio.html"> Inicio</a>
+                <a href="Nosotros.html"> Nosotros</a>
+                <a href="Servicios.html"> Servicios</a>
+                <a href="Contacto.html"> Contacto</a>
                 <?php
-                    session_start();
-                    if($_SESSION['tipo_usuario'] == "administrador"){
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaAdministrador.php" class="menu__link "> Ver Anuncios</a>';
-                        echo '</li>';
-                    } else if ($_SESSION['tipo_usuario'] == "cliente"){
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaContratar.php" class="menu__link "> Contratar</a>';
-                        echo '</li>';
-                        echo '<li class="menu__item">';
-                        echo '<a href="VistaVerContrataciones.php" class="menu__link "> Ver Mis Contrataciones</a>';
-                        echo '</li>';
-                    }
+                session_start();
+                if($_SESSION['tipo_usuario'] == "administrador"){
+                    echo '<a href="VistaAdministrador.php"> Ver Anuncios</a>';
+                } else if ($_SESSION['tipo_usuario'] == "cliente"){
+                    echo '<a href="VistaContratar.php"> Contratar</a>';
+                    echo '<a href="VistaVerContrataciones.php"> Ver Mis Contrataciones</a>';
+                }
 
-                    if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
-                        echo '<li class="menu__item">';
-                        echo '<a href="IniciarSesion.php" class="menu__link "> Iniciar Sesion</a>';
-                        echo '</li>';
-                    } else{
-                        echo '<li class="menu__item">';
-                        echo '<a href="CerrarSesion.php" class="menu__link "> Cerrar Sesion</a>';
-                        echo '</li>';
-                    }
+                if($_SESSION['inicio'] == null || $_SESSION['inicio'] == false){
+                    echo '<a href="IniciarSesion.php"> Iniciar Sesion</a>';
+                } else{
+                    echo '<a href="CerrarSesion.php"> Cerrar Sesion</a>';
+                }
                 ?>
-                
-            </ul>
 
-            
-        </div>      
-            
-    </nav>
+            </nav>
+        </div>
 
-        
-        
-            <div class="add-box">
-                <h1> Ingrese los siguientes datos de la cartelera a registrar:</h1>
 
+        </header>
+
+        <p> Ingrese los siguientes datos de la cartelera a registrar: <br></p>
+
+        <div class="row">
+            <div class="column">
                 <form name="contact-form" method="POST" action="">
                     ID: <br>
-                    <input type="text"  name="id" placeholder="ingrese el ID">
+                    <input type="text" size="40" name="id">
                     <br><br>
                         
                     Dirección: <br>
-                    <input type="text"  name="direccion" placeholder="ingrese la direccion">
+                    <input type="text" size="40" name="direccion">
                     <br><br>
                         
                     Título: <br>
-                    <input type="text"  name="titulo" placeholder="ingrese el Titulo">
+                    <input type="text" size="40" name="titulo">
                     <br><br>
                     
                     Precio: <br>
-                    <input type="text"  name="precio" placeholder="ingrese el precio">
+                    <input type="text" size="40" name="precio">
                     <br><br>
                      
                     <input type="submit" name="submit" value="Registrar Datos" onclick="validateForm()">               
                 </form>
             </div>
-        
-        
+        </div>
+        <footer>
+        <p class="Foot" align="center">
+                                The Masters Of Softwae S.A de C.V&nbsp;&nbsp;
+
+                                Todos los Derechos Reservados
+                            
+
+                        
+                    </p>
+    </footer>
     </body>
 </html>
